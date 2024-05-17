@@ -14,16 +14,16 @@ Create a tournament by tapping the "+". Select the newly created tournament. All
 
 ## Notes
 
-The "computed" scores are the game result for each player.
+The "computed scores" are the game results for each player.
 
 ## To do
 
-1. Icloud storage of tournamets.
+1. Icloud storage of tournaments.
 
-2. Horizontal alignment in CompletedGameView needs to be improved.
+2. Horizontal alignment in CompletedGameView.swift needs to be improved.
 
-3. Use of @AppStorage
+3. Use of @AppStorage for rule set and wind positioning in Tournaments.swift
 
 4. Currently the IndividualTournamentView shows game status according to the current wind. It might be better to hold player positions fixed.
 
-5. Is it useful to keep overall players scores?
+5. Is it useful to keep an overall average player score across tournaments?
