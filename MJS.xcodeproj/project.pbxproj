@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D40DAD6E2BC49B020075A3BA /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40DAD6D2BC49B020075A3BA /* PreviewData.swift */; };
+		D47C0DF02BEBF4B3004905DA /* GameGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C0DEF2BEBF4B3004905DA /* GameGraphView.swift */; };
+		D47C0DF22BED60CE004905DA /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C0DF12BED60CE004905DA /* Score.swift */; };
 		D48C3FB62BB07DC900EE3ABE /* MJSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FB52BB07DC900EE3ABE /* MJSApp.swift */; };
 		D48C3FB82BB07DC900EE3ABE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FB72BB07DC900EE3ABE /* ContentView.swift */; };
-		D48C3FBA2BB07DC900EE3ABE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FB92BB07DC900EE3ABE /* Item.swift */; };
 		D48C3FBC2BB07DCB00EE3ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48C3FBB2BB07DCB00EE3ABE /* Assets.xcassets */; };
 		D48C3FBF2BB07DCB00EE3ABE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48C3FBE2BB07DCB00EE3ABE /* Preview Assets.xcassets */; };
 		D48C3FC92BB07DCB00EE3ABE /* MJSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FC82BB07DCB00EE3ABE /* MJSTests.swift */; };
 		D48C3FD32BB07DCB00EE3ABE /* MJSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FD22BB07DCB00EE3ABE /* MJSUITests.swift */; };
 		D48C3FD52BB07DCB00EE3ABE /* MJSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FD42BB07DCB00EE3ABE /* MJSUITestsLaunchTests.swift */; };
+		D48C3FEB2BB0C5D100EE3ABE /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FEA2BB0C5D000EE3ABE /* Tournament.swift */; };
+		D48C3FEF2BB1FC8300EE3ABE /* TournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FEE2BB1FC8300EE3ABE /* TournamentView.swift */; };
+		D48C3FF52BB2057200EE3ABE /* AddTournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FF42BB2057200EE3ABE /* AddTournamentView.swift */; };
+		D48C3FF72BB205A600EE3ABE /* IndividualTournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FF62BB205A600EE3ABE /* IndividualTournamentView.swift */; };
+		D4F4905C2BB5DA5500B6F474 /* CompleteGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4905B2BB5DA5500B6F474 /* CompleteGameView.swift */; };
+		D4F490E22BBB2CFE00B6F474 /* DateToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F490E12BBB2CFE00B6F474 /* DateToString.swift */; };
+		D4F490E62BBB3FF400B6F474 /* PrintTournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F490E52BBB3FF400B6F474 /* PrintTournament.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D40DAD6D2BC49B020075A3BA /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		D47C0DEF2BEBF4B3004905DA /* GameGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGraphView.swift; sourceTree = "<group>"; };
+		D47C0DF12BED60CE004905DA /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		D48C3FB22BB07DC900EE3ABE /* MJS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48C3FB52BB07DC900EE3ABE /* MJSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJSApp.swift; sourceTree = "<group>"; };
 		D48C3FB72BB07DC900EE3ABE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D48C3FB92BB07DC900EE3ABE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D48C3FBB2BB07DCB00EE3ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D48C3FBE2BB07DCB00EE3ABE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D48C3FC42BB07DCB00EE3ABE /* MJSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MJSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +57,13 @@
 		D48C3FCE2BB07DCB00EE3ABE /* MJSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MJSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48C3FD22BB07DCB00EE3ABE /* MJSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJSUITests.swift; sourceTree = "<group>"; };
 		D48C3FD42BB07DCB00EE3ABE /* MJSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D48C3FEA2BB0C5D000EE3ABE /* Tournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		D48C3FEE2BB1FC8300EE3ABE /* TournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentView.swift; sourceTree = "<group>"; };
+		D48C3FF42BB2057200EE3ABE /* AddTournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTournamentView.swift; sourceTree = "<group>"; };
+		D48C3FF62BB205A600EE3ABE /* IndividualTournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualTournamentView.swift; sourceTree = "<group>"; };
+		D4F4905B2BB5DA5500B6F474 /* CompleteGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteGameView.swift; sourceTree = "<group>"; };
+		D4F490E12BBB2CFE00B6F474 /* DateToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToString.swift; sourceTree = "<group>"; };
+		D4F490E52BBB3FF400B6F474 /* PrintTournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTournament.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D47C0DEE2BEBF47D004905DA /* Game View */ = {
+			isa = PBXGroup;
+			children = (
+				D4F4905B2BB5DA5500B6F474 /* CompleteGameView.swift */,
+				D47C0DEF2BEBF4B3004905DA /* GameGraphView.swift */,
+			);
+			path = "Game View";
+			sourceTree = "<group>";
+		};
 		D48C3FA92BB07DC900EE3ABE = {
 			isa = PBXGroup;
 			children = (
@@ -96,11 +123,10 @@
 		D48C3FB42BB07DC900EE3ABE /* MJS */ = {
 			isa = PBXGroup;
 			children = (
-				D48C3FB52BB07DC900EE3ABE /* MJSApp.swift */,
 				D48C3FB72BB07DC900EE3ABE /* ContentView.swift */,
-				D48C3FB92BB07DC900EE3ABE /* Item.swift */,
-				D48C3FBB2BB07DCB00EE3ABE /* Assets.xcassets */,
-				D48C3FBD2BB07DCB00EE3ABE /* Preview Content */,
+				D48C3FE12BB07E9200EE3ABE /* Views */,
+				D48C3FE22BB07EC600EE3ABE /* Launch */,
+				D48C3FE32BB07EE000EE3ABE /* Model */,
 			);
 			path = MJS;
 			sourceTree = "<group>";
@@ -109,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				D48C3FBE2BB07DCB00EE3ABE /* Preview Assets.xcassets */,
+				D40DAD6D2BC49B020075A3BA /* PreviewData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -128,6 +155,54 @@
 				D48C3FD42BB07DCB00EE3ABE /* MJSUITestsLaunchTests.swift */,
 			);
 			path = MJSUITests;
+			sourceTree = "<group>";
+		};
+		D48C3FE12BB07E9200EE3ABE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D48C3FE52BB07FC600EE3ABE /* Tournament Views */,
+				D47C0DEE2BEBF47D004905DA /* Game View */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D48C3FE22BB07EC600EE3ABE /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				D48C3FB52BB07DC900EE3ABE /* MJSApp.swift */,
+				D48C3FBB2BB07DCB00EE3ABE /* Assets.xcassets */,
+				D48C3FBD2BB07DCB00EE3ABE /* Preview Content */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		D48C3FE32BB07EE000EE3ABE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D48C3FEA2BB0C5D000EE3ABE /* Tournament.swift */,
+				D47C0DF12BED60CE004905DA /* Score.swift */,
+				D48C3FE92BB0802A00EE3ABE /* Utilities */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D48C3FE52BB07FC600EE3ABE /* Tournament Views */ = {
+			isa = PBXGroup;
+			children = (
+				D48C3FEE2BB1FC8300EE3ABE /* TournamentView.swift */,
+				D48C3FF62BB205A600EE3ABE /* IndividualTournamentView.swift */,
+				D48C3FF42BB2057200EE3ABE /* AddTournamentView.swift */,
+			);
+			path = "Tournament Views";
+			sourceTree = "<group>";
+		};
+		D48C3FE92BB0802A00EE3ABE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D4F490E12BBB2CFE00B6F474 /* DateToString.swift */,
+				D4F490E52BBB3FF400B6F474 /* PrintTournament.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +335,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48C3FEB2BB0C5D100EE3ABE /* Tournament.swift in Sources */,
+				D40DAD6E2BC49B020075A3BA /* PreviewData.swift in Sources */,
+				D48C3FF72BB205A600EE3ABE /* IndividualTournamentView.swift in Sources */,
+				D47C0DF02BEBF4B3004905DA /* GameGraphView.swift in Sources */,
 				D48C3FB82BB07DC900EE3ABE /* ContentView.swift in Sources */,
-				D48C3FBA2BB07DC900EE3ABE /* Item.swift in Sources */,
+				D47C0DF22BED60CE004905DA /* Score.swift in Sources */,
+				D48C3FF52BB2057200EE3ABE /* AddTournamentView.swift in Sources */,
+				D48C3FEF2BB1FC8300EE3ABE /* TournamentView.swift in Sources */,
+				D4F490E62BBB3FF400B6F474 /* PrintTournament.swift in Sources */,
+				D4F490E22BBB2CFE00B6F474 /* DateToString.swift in Sources */,
+				D4F4905C2BB5DA5500B6F474 /* CompleteGameView.swift in Sources */,
 				D48C3FB62BB07DC900EE3ABE /* MJSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +509,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MJS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MJS/Launch/Preview Content\"";
 				DEVELOPMENT_TEAM = 3SPAAQ6SK2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -454,7 +538,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MJS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MJS/Launch/Preview Content\"";
 				DEVELOPMENT_TEAM = 3SPAAQ6SK2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
