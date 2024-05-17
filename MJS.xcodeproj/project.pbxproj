@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		D40DAD6E2BC49B020075A3BA /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40DAD6D2BC49B020075A3BA /* PreviewData.swift */; };
 		D43E58982BF7A89900F295B4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D43E58972BF7A89900F295B4 /* README.md */; };
+		D43E58992BF7AB8C00F295B4 /* MJSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FC82BB07DCB00EE3ABE /* MJSTests.swift */; };
 		D47C0DF02BEBF4B3004905DA /* GameGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C0DEF2BEBF4B3004905DA /* GameGraphView.swift */; };
 		D47C0DF22BED60CE004905DA /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C0DF12BED60CE004905DA /* Score.swift */; };
 		D48C3FB62BB07DC900EE3ABE /* MJSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FB52BB07DC900EE3ABE /* MJSApp.swift */; };
 		D48C3FB82BB07DC900EE3ABE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FB72BB07DC900EE3ABE /* ContentView.swift */; };
 		D48C3FBC2BB07DCB00EE3ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48C3FBB2BB07DCB00EE3ABE /* Assets.xcassets */; };
 		D48C3FBF2BB07DCB00EE3ABE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48C3FBE2BB07DCB00EE3ABE /* Preview Assets.xcassets */; };
-		D48C3FC92BB07DCB00EE3ABE /* MJSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FC82BB07DCB00EE3ABE /* MJSTests.swift */; };
 		D48C3FD32BB07DCB00EE3ABE /* MJSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FD22BB07DCB00EE3ABE /* MJSUITests.swift */; };
 		D48C3FD52BB07DCB00EE3ABE /* MJSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FD42BB07DCB00EE3ABE /* MJSUITestsLaunchTests.swift */; };
 		D48C3FEB2BB0C5D100EE3ABE /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FEA2BB0C5D000EE3ABE /* Tournament.swift */; };
@@ -146,7 +146,6 @@
 		D48C3FC72BB07DCB00EE3ABE /* MJSTests */ = {
 			isa = PBXGroup;
 			children = (
-				D48C3FC82BB07DCB00EE3ABE /* MJSTests.swift */,
 			);
 			path = MJSTests;
 			sourceTree = "<group>";
@@ -173,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				D48C3FB52BB07DC900EE3ABE /* MJSApp.swift */,
+				D48C3FC82BB07DCB00EE3ABE /* MJSTests.swift */,
 				D48C3FBB2BB07DCB00EE3ABE /* Assets.xcassets */,
 				D48C3FBD2BB07DCB00EE3ABE /* Preview Content */,
 			);
@@ -344,6 +344,7 @@
 				D48C3FF72BB205A600EE3ABE /* IndividualTournamentView.swift in Sources */,
 				D47C0DF02BEBF4B3004905DA /* GameGraphView.swift in Sources */,
 				D48C3FB82BB07DC900EE3ABE /* ContentView.swift in Sources */,
+				D43E58992BF7AB8C00F295B4 /* MJSTests.swift in Sources */,
 				D47C0DF22BED60CE004905DA /* Score.swift in Sources */,
 				D48C3FF52BB2057200EE3ABE /* AddTournamentView.swift in Sources */,
 				D48C3FEF2BB1FC8300EE3ABE /* TournamentView.swift in Sources */,
@@ -358,7 +359,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48C3FC92BB07DCB00EE3ABE /* MJSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
