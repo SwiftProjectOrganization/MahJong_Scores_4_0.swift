@@ -35,40 +35,40 @@ extension CompleteGameView: View {
           List {
             HStack {
               Spacer(minLength: 40)
-              Text("\(gameWinnerName)")
-                .multilineTextAlignment(.leading)
+              Text("\(gameWinnerName):")
+                .multilineTextAlignment(.trailing)
               Spacer()
               TextField("Game score", text: $gameWinnerScore)
                 .focused($focusedField)
-                .multilineTextAlignment(.center)
-             Spacer(minLength: 40)
+                .multilineTextAlignment(.trailing)
+             Spacer(minLength: 60)
             }
             HStack {
               Spacer(minLength: 40)
-              Text("\(gameSpName)")
-                .multilineTextAlignment(.leading)
+              Text("\(gameSpName):")
+                .multilineTextAlignment(.trailing)
               Spacer()
               TextField("Game score", text: $gameSpScore)
-                .multilineTextAlignment(.center)
-             Spacer(minLength: 40)
+                .multilineTextAlignment(.trailing)
+             Spacer(minLength: 60)
             }
             HStack {
               Spacer(minLength: 40)
-              Text("\(gameTpName)")
-                .multilineTextAlignment(.leading)
+              Text("\(gameTpName):")
+                .multilineTextAlignment(.trailing)
               Spacer()
-              TextField("Game score:", text: $gameTpScore)
-                .multilineTextAlignment(.center)
-              Spacer(minLength: 40)
+              TextField("Game score", text: $gameTpScore)
+                .multilineTextAlignment(.trailing)
+              Spacer(minLength: 60)
             }
             HStack {
               Spacer(minLength: 40)
-              Text("\(gameLpName)")
-                .multilineTextAlignment(.leading)
+              Text("\(gameLpName):")
+                .multilineTextAlignment(.trailing)
               Spacer()
-              TextField("Game score:", text: $gameLpScore)
-                .multilineTextAlignment(.center)
-               Spacer(minLength: 40)
+              TextField("Game score", text: $gameLpScore)
+                .multilineTextAlignment(.trailing)
+              Spacer(minLength: 60)
             }
           }
         }
@@ -134,7 +134,7 @@ extension CompleteGameView {
   private func save(_ tournament: Tournament) {
     //print((gameWinnerName, gameSpName, gameTpName, gameLpName))
     //print((gameWinnerScore, gameSpScore, gameTpScore, gameLpScore))
-    tournament.lastGame += 1
+    tournament.lastGame! += 1
     tournament.gameWinnerName = gameWinnerName
     tournament.playerGameScore![gameWinnerName] = Int(gameWinnerScore)
     tournament.playerGameScore![gameSpName] = Int(gameSpScore)

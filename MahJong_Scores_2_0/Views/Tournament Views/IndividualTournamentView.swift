@@ -37,8 +37,9 @@ extension IndividualTournamentView: View {
             Spacer()
           }
           HStack {
-            Spacer();Text(createPlayerLabel(tournament, 3));Spacer();Text("*");Spacer();
-            Text(createPlayerLabel(tournament, 1));Spacer()
+            Text(createPlayerLabel(tournament, 3));
+            Spacer();
+            Text(createPlayerLabel(tournament, 1))
           }
           .font(.headline)
 
@@ -66,8 +67,6 @@ extension IndividualTournamentView: View {
     }
     .onAppear {
       title = tournament.title
-      //print(tournament.scheduleItem)
-      
     }
     .onDisappear {
       title = tournament.title
@@ -77,10 +76,12 @@ extension IndividualTournamentView: View {
 
 extension IndividualTournamentView {
   private func createPlayerLabel(_ tournament: Tournament, _ index: Int) -> String {
-    let currentWind = tournament.winds![index]
-    let player = tournament.windsToPlayersInGame![currentWind]
-    let score = tournament.playerTournamentScore![player!]
-    let playerLabel = "\(currentWind): " + "\(player!) " + "(\(score!))"
+    //let currentWind = tournament.winds![index]
+    //let player = tournament.windsToPlayersInGame![currentWind]
+    let player = [tournament.fpName!, tournament.spName!, tournament.tpName!, tournament.lpName!][index]
+    let currentWind = tournament.playersToWindsInGame![player]
+    let score = tournament.playerTournamentScore![player]
+    let playerLabel = "\(currentWind!):" + "\(player)" + " (\(score!))"
     return playerLabel
   }
 }

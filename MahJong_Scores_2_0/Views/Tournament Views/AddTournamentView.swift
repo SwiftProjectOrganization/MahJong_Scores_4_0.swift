@@ -72,12 +72,9 @@ extension AddTournamentView: View {
 extension AddTournamentView {
   private func save() {
     focusedField = false
-    let tournament = Tournament()
+    let tournament = Tournament(fp, sp, tp, lp, fp, "East", fp)
+    
     tournament.scheduleItem = 0
-    tournament.fpName = fp
-    tournament.spName = sp
-    tournament.tpName = tp
-    tournament.lpName = lp
     tournament.players = [fp, sp, tp, lp]
     tournament.winds = ["East", "South", "West", "North"]
     let scores = [2000, 2000, 2000, 2000]
@@ -88,17 +85,16 @@ extension AddTournamentView {
     tournament.playersToWindsInGame = Dictionary(uniqueKeysWithValues: zip(tmp.1, tmp.0))
     tournament.currentWind = tmp.0[0]
     tournament.windPlayer = tmp.1[0]
-    tournament.lastGame += 1
-    tournament.fpScores.append(Score(fp, tournament.lastGame, 2000))
-    tournament.spScores.append(Score(sp, tournament.lastGame, 2000))
-    tournament.tpScores.append(Score(tp, tournament.lastGame, 2000))
-    tournament.lpScores.append(Score(lp, tournament.lastGame, 2000))
+    tournament.lastGame! += 1
+    tournament.fpScores!.append(Score(fp, tournament.lastGame!, 2000))
+    tournament.spScores!.append(Score(sp, tournament.lastGame!, 2000))
+    tournament.tpScores!.append(Score(tp, tournament.lastGame!, 2000))
+    tournament.lpScores!.append(Score(lp, tournament.lastGame!, 2000))
     context.insert(tournament)
-    printTournament(tournament)
     dismiss()
   }
 }
 
 #Preview {
-    AddTournamentView()
+  AddTournamentView()
 }

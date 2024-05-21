@@ -9,10 +9,10 @@ import SwiftUI
 import SwiftData
 
 @main
-struct MJSApp: App {
+struct MahJong_Scores_2_0App: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Tournament.self, 
+          Tournament.self, Score.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

@@ -12,9 +12,9 @@ import Charts
 @Model
 public class Score {
   public var id = UUID()
-  var name: String
-  var game: Int
-  var score: Int
+  var name: String?
+  var game: Int?
+  var score: Int?
   var tournament: Tournament?
   
   init(_ name: String,

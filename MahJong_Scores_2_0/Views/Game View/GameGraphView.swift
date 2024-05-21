@@ -25,10 +25,10 @@ extension GameGraphView: View {
       ForEach(scores, id: \.player) { players in
         ForEach(players.data) { scores in
           LineMark(
-            x: .value("Game", scores.game),
-            y: .value("Score", scores.score)
+            x: .value("Game", scores.game!),
+            y: .value("Score", scores.score!)
           )
-          .foregroundStyle(by: .value("Player", players.player))
+          .foregroundStyle(by: .value("Player", players.player!))
         }
       }
     }

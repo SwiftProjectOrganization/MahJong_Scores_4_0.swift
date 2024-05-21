@@ -14,26 +14,26 @@ public class Tournament {
 
   // Tournament wide settings, currently not used
   
-  let rotateClockwise: Bool = true
-  let ruleSet: String = "INTERNATIONAL"
-  let startDate: String
+  let rotateClockwise: Bool?
+  let ruleSet: String?
+  let startDate: String?
   
   // Tournament wide values
-  var scheduleItem: Int
-  var lastGame: Int = -1
+  var scheduleItem: Int = 0
+  var lastGame: Int?
   
   // Player names and sequence when tournament is started
-  var fpName: String = "Liesbeth"
-  var spName: String = "Rob"
-  var tpName: String = "Nancy"
-  var lpName: String = "Carel"
+  var fpName: String?
+  var spName: String?
+  var tpName: String?
+  var lpName: String?
   
   // Game values
-  var windPlayer: String
-  var currentWind: String
+  var windPlayer: String?
+  var currentWind: String?
   var players: [String]?
   var winds: [String]?
-  var gameWinnerName: String
+  var gameWinnerName: String?
 
   var playerTournamentScore: [String: Int]?
   var playerGameScore: [String: Int]?
@@ -42,63 +42,79 @@ public class Tournament {
 
   @Relationship(deleteRule: .cascade,
                 inverse: \Score.tournament)
-  var fpScores: [Score] = []
+  var fpScores: [Score]?
   
   @Relationship(deleteRule: .cascade,
                 inverse: \Score.tournament)
-  var spScores: [Score] = []
+  var spScores: [Score]?
   
   @Relationship(deleteRule: .cascade,
                 inverse: \Score.tournament)
-  var tpScores: [Score] = []
+  var tpScores: [Score]?
   
   @Relationship(deleteRule: .cascade,
                 inverse: \Score.tournament)
-  var lpScores: [Score] = []
+  var lpScores: [Score]?
   
-  init() {
+  init(_ fpName: String,
+       _ spName: String,
+       _ tpName: String,
+       _ lpName: String,
+       _ windPlayer: String,
+       _ currentWind: String,
+       _ gameWinnerName: String) {
+    self.rotateClockwise = true
+    self.ruleSet = "INTERNATIONAL"
     self.startDate = dateToString()
-    self.scheduleItem = 0
-    self.windPlayer = "Liesbeth"
-    self.currentWind = "East"
-    self.gameWinnerName = "Liesbeth"
+    self.lastGame = -1
+    self.fpName = fpName
+    self.spName = spName
+    self.tpName = tpName
+    self.lpName = lpName
+    self.windPlayer = windPlayer
+    self.currentWind = currentWind
+    self.gameWinnerName = gameWinnerName
+    self.fpScores = []
+    self.spScores = []
+    self.tpScores = []
+    self.lpScores = []
   }
 }
 
 extension Tournament {
     var title: String {
-      "\(currentWind) - \(startDate): \n\(fpName) \(spName) \(tpName) \(lpName)"
+      "\(currentWind!) - \(startDate!): \n\(fpName!) \(spName!) \(tpName!) \(lpName!)"
     }
 }
 
 extension Tournament {
   var sortedFpScores: [Score] {
-    let scores = self.fpScores.filter { $0.tournament == self }
-    let sortedScores = scores.sorted {$0.game < $1.game}
+    let scores = self.fpScores!.filter { $0.tournament! == self }
+    let sortedScores = scores.sorted {$0.game! < $1.game!}
     return sortedScores
   }
 }
 
 extension Tournament {
   var sortedSpScores: [Score] {
-    let scores = self.spScores.filter { $0.tournament == self }
-    let sortedScores = scores.sorted {$0.game < $1.game}
+    let scores = self.spScores!.filter { $0.tournament! == self }
+    let sortedScores = scores.sorted {$0.game! < $1.game!}
     return sortedScores
   }
 }
 
 extension Tournament {
   var sortedTpScores: [Score] {
-    let scores = self.tpScores.filter { $0.tournament == self }
-    let sortedScores = scores.sorted {$0.game < $1.game}
+    let scores = self.tpScores!.filter { $0.tournament! == self }
+    let sortedScores = scores.sorted {$0.game! < $1.game!}
     return sortedScores
   }
 }
 
 extension Tournament {
   var sortedLpScores: [Score] {
-    let scores = self.lpScores.filter { $0.tournament == self }
-    let sortedScores = scores.sorted {$0.game < $1.game}
+    let scores = self.lpScores!.filter { $0.tournament! == self }
+    let sortedScores = scores.sorted {$0.game! < $1.game!}
     return sortedScores
   }
 }
@@ -139,9 +155,9 @@ extension Tournament {
       for i in 0...3 {
         let pi = tournament.players![i]
         if pi == tournament.gameWinnerName {
-          tournament.playerTournamentScore![pi]! += 6 * tournament.playerGameScore![tournament.gameWinnerName]!
+          tournament.playerTournamentScore![pi]! += 6 * tournament.playerGameScore![tournament.gameWinnerName!]!
         } else {
-          tournament.playerTournamentScore![pi]! -= 2 * tournament.playerGameScore![tournament.gameWinnerName]!
+          tournament.playerTournamentScore![pi]! -= 2 * tournament.playerGameScore![tournament.gameWinnerName!]!
           for j in 0...3 {
             let pj = tournament.players![j]
             if pi != pj && pj != tournament.gameWinnerName {
@@ -155,12 +171,12 @@ extension Tournament {
       for i in 0...3 {
         let pi = tournament.players![i]
         if pi == tournament.gameWinnerName {
-          tournament.playerTournamentScore![pi]! += 4 * tournament.playerGameScore![tournament.gameWinnerName]!
+          tournament.playerTournamentScore![pi]! += 4 * tournament.playerGameScore![tournament.gameWinnerName!]!
         } else {
           if pi == tournament.windPlayer {
-            tournament.playerTournamentScore![pi]! -= 2 * tournament.playerGameScore![tournament.gameWinnerName]!
+            tournament.playerTournamentScore![pi]! -= 2 * tournament.playerGameScore![tournament.gameWinnerName!]!
           } else {
-            tournament.playerTournamentScore![pi]! -= 1 * tournament.playerGameScore![tournament.gameWinnerName]!
+            tournament.playerTournamentScore![pi]! -= 1 * tournament.playerGameScore![tournament.gameWinnerName!]!
           }
           for j in 0...3 {
             let pj = tournament.players![j]
@@ -192,9 +208,9 @@ extension Tournament {
         tournament.currentWind = "Done"
       }
     }
-    tournament.fpScores.append(Score(tournament.fpName, tournament.lastGame, tournament.playerTournamentScore![tournament.fpName]!))
-    tournament.spScores.append(Score(tournament.spName, tournament.lastGame, tournament.playerTournamentScore![tournament.spName]!))
-    tournament.tpScores.append(Score(tournament.tpName, tournament.lastGame, tournament.playerTournamentScore![tournament.tpName]!))
-    tournament.lpScores.append(Score(tournament.lpName, tournament.lastGame, tournament.playerTournamentScore![tournament.lpName]!))
+    tournament.fpScores!.append(Score(tournament.fpName!, tournament.lastGame!, tournament.playerTournamentScore![tournament.fpName!]!))
+    tournament.spScores!.append(Score(tournament.spName!, tournament.lastGame!, tournament.playerTournamentScore![tournament.spName!]!))
+    tournament.tpScores!.append(Score(tournament.tpName!, tournament.lastGame!, tournament.playerTournamentScore![tournament.tpName!]!))
+    tournament.lpScores!.append(Score(tournament.lpName!, tournament.lastGame!, tournament.playerTournamentScore![tournament.lpName!]!))
   }
 }

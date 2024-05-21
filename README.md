@@ -18,12 +18,6 @@ The "computed scores" are the game results for each player.
 
 ## To do
 
-1. Icloud storage of tournaments.
+1. Use of @AppStorage for rule set and wind positioning in Tournaments.swift
 
-2. Horizontal alignment in CompletedGameView.swift needs to be improved.
-
-3. Use of @AppStorage for rule set and wind positioning in Tournaments.swift
-
-4. Currently the IndividualTournamentView shows game status according to the current wind. It might be better to hold player positions fixed.
-
-5. Is it useful to keep an overall average player score across tournaments?
+2. Is it useful to keep an overall average player score across tournaments?

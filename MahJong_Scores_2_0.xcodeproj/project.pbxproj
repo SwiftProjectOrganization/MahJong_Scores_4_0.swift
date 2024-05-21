@@ -11,12 +11,10 @@
 		D43E58982BF7A89900F295B4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D43E58972BF7A89900F295B4 /* README.md */; };
 		D47C0DF02BEBF4B3004905DA /* GameGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C0DEF2BEBF4B3004905DA /* GameGraphView.swift */; };
 		D47C0DF22BED60CE004905DA /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C0DF12BED60CE004905DA /* Score.swift */; };
-		D48C3FB62BB07DC900EE3ABE /* MJSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FB52BB07DC900EE3ABE /* MJSApp.swift */; };
+		D48C3FB62BB07DC900EE3ABE /* MahJong_Scores_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FB52BB07DC900EE3ABE /* MahJong_Scores_2_0App.swift */; };
 		D48C3FB82BB07DC900EE3ABE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FB72BB07DC900EE3ABE /* ContentView.swift */; };
 		D48C3FBC2BB07DCB00EE3ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48C3FBB2BB07DCB00EE3ABE /* Assets.xcassets */; };
 		D48C3FBF2BB07DCB00EE3ABE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48C3FBE2BB07DCB00EE3ABE /* Preview Assets.xcassets */; };
-		D48C3FD32BB07DCB00EE3ABE /* MJSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FD22BB07DCB00EE3ABE /* MJSUITests.swift */; };
-		D48C3FD52BB07DCB00EE3ABE /* MJSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FD42BB07DCB00EE3ABE /* MJSUITestsLaunchTests.swift */; };
 		D48C3FEB2BB0C5D100EE3ABE /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FEA2BB0C5D000EE3ABE /* Tournament.swift */; };
 		D48C3FEF2BB1FC8300EE3ABE /* TournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FEE2BB1FC8300EE3ABE /* TournamentView.swift */; };
 		D48C3FF52BB2057200EE3ABE /* AddTournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FF42BB2057200EE3ABE /* AddTournamentView.swift */; };
@@ -46,17 +44,16 @@
 /* Begin PBXFileReference section */
 		D40DAD6D2BC49B020075A3BA /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		D43E58972BF7A89900F295B4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D43E59DB2BFAE4FA00F295B4 /* MahJong_Scores_2_0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MahJong_Scores_2_0.entitlements; sourceTree = "<group>"; };
 		D47C0DEF2BEBF4B3004905DA /* GameGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGraphView.swift; sourceTree = "<group>"; };
 		D47C0DF12BED60CE004905DA /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
-		D48C3FB22BB07DC900EE3ABE /* MJS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D48C3FB52BB07DC900EE3ABE /* MJSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJSApp.swift; sourceTree = "<group>"; };
+		D48C3FB22BB07DC900EE3ABE /* MahJong_Scores_2_0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MahJong_Scores_2_0.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D48C3FB52BB07DC900EE3ABE /* MahJong_Scores_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MahJong_Scores_2_0App.swift; sourceTree = "<group>"; };
 		D48C3FB72BB07DC900EE3ABE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D48C3FBB2BB07DCB00EE3ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D48C3FBE2BB07DCB00EE3ABE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D48C3FC42BB07DCB00EE3ABE /* MJSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MJSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D48C3FCE2BB07DCB00EE3ABE /* MJSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MJSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D48C3FD22BB07DCB00EE3ABE /* MJSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJSUITests.swift; sourceTree = "<group>"; };
-		D48C3FD42BB07DCB00EE3ABE /* MJSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D48C3FC42BB07DCB00EE3ABE /* MahJong_Scores_2_0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MahJong_Scores_2_0Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D48C3FCE2BB07DCB00EE3ABE /* MahJong_Scores_2_0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MahJong_Scores_2_0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48C3FEA2BB0C5D000EE3ABE /* Tournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		D48C3FEE2BB1FC8300EE3ABE /* TournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentView.swift; sourceTree = "<group>"; };
 		D48C3FF42BB2057200EE3ABE /* AddTournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTournamentView.swift; sourceTree = "<group>"; };
@@ -104,8 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				D43E58972BF7A89900F295B4 /* README.md */,
-				D48C3FB42BB07DC900EE3ABE /* MJS */,
-				D48C3FD12BB07DCB00EE3ABE /* MJSUITests */,
+				D48C3FB42BB07DC900EE3ABE /* MahJong_Scores_2_0 */,
 				D48C3FB32BB07DC900EE3ABE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,22 +109,23 @@
 		D48C3FB32BB07DC900EE3ABE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D48C3FB22BB07DC900EE3ABE /* MJS.app */,
-				D48C3FC42BB07DCB00EE3ABE /* MJSTests.xctest */,
-				D48C3FCE2BB07DCB00EE3ABE /* MJSUITests.xctest */,
+				D48C3FB22BB07DC900EE3ABE /* MahJong_Scores_2_0.app */,
+				D48C3FC42BB07DCB00EE3ABE /* MahJong_Scores_2_0Tests.xctest */,
+				D48C3FCE2BB07DCB00EE3ABE /* MahJong_Scores_2_0UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D48C3FB42BB07DC900EE3ABE /* MJS */ = {
+		D48C3FB42BB07DC900EE3ABE /* MahJong_Scores_2_0 */ = {
 			isa = PBXGroup;
 			children = (
+				D43E59DB2BFAE4FA00F295B4 /* MahJong_Scores_2_0.entitlements */,
 				D48C3FB72BB07DC900EE3ABE /* ContentView.swift */,
 				D48C3FE12BB07E9200EE3ABE /* Views */,
 				D48C3FE22BB07EC600EE3ABE /* Launch */,
 				D48C3FE32BB07EE000EE3ABE /* Model */,
 			);
-			path = MJS;
+			path = MahJong_Scores_2_0;
 			sourceTree = "<group>";
 		};
 		D48C3FBD2BB07DCB00EE3ABE /* Preview Content */ = {
@@ -138,15 +135,6 @@
 				D40DAD6D2BC49B020075A3BA /* PreviewData.swift */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		D48C3FD12BB07DCB00EE3ABE /* MJSUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D48C3FD22BB07DCB00EE3ABE /* MJSUITests.swift */,
-				D48C3FD42BB07DCB00EE3ABE /* MJSUITestsLaunchTests.swift */,
-			);
-			path = MJSUITests;
 			sourceTree = "<group>";
 		};
 		D48C3FE12BB07E9200EE3ABE /* Views */ = {
@@ -161,7 +149,7 @@
 		D48C3FE22BB07EC600EE3ABE /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				D48C3FB52BB07DC900EE3ABE /* MJSApp.swift */,
+				D48C3FB52BB07DC900EE3ABE /* MahJong_Scores_2_0App.swift */,
 				D48C3FBB2BB07DCB00EE3ABE /* Assets.xcassets */,
 				D48C3FBD2BB07DCB00EE3ABE /* Preview Content */,
 			);
@@ -200,9 +188,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D48C3FB12BB07DC900EE3ABE /* MJS */ = {
+		D48C3FB12BB07DC900EE3ABE /* MahJong_Scores_2_0 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D48C3FD82BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MJS" */;
+			buildConfigurationList = D48C3FD82BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MahJong_Scores_2_0" */;
 			buildPhases = (
 				D48C3FAE2BB07DC900EE3ABE /* Sources */,
 				D48C3FAF2BB07DC900EE3ABE /* Frameworks */,
@@ -212,14 +200,14 @@
 			);
 			dependencies = (
 			);
-			name = MJS;
+			name = MahJong_Scores_2_0;
 			productName = MJS;
-			productReference = D48C3FB22BB07DC900EE3ABE /* MJS.app */;
+			productReference = D48C3FB22BB07DC900EE3ABE /* MahJong_Scores_2_0.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D48C3FC32BB07DCB00EE3ABE /* MJSTests */ = {
+		D48C3FC32BB07DCB00EE3ABE /* MahJong_Scores_2_0Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D48C3FDB2BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MJSTests" */;
+			buildConfigurationList = D48C3FDB2BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MahJong_Scores_2_0Tests" */;
 			buildPhases = (
 				D48C3FC02BB07DCB00EE3ABE /* Sources */,
 				D48C3FC12BB07DCB00EE3ABE /* Frameworks */,
@@ -230,14 +218,14 @@
 			dependencies = (
 				D48C3FC62BB07DCB00EE3ABE /* PBXTargetDependency */,
 			);
-			name = MJSTests;
+			name = MahJong_Scores_2_0Tests;
 			productName = MJSTests;
-			productReference = D48C3FC42BB07DCB00EE3ABE /* MJSTests.xctest */;
+			productReference = D48C3FC42BB07DCB00EE3ABE /* MahJong_Scores_2_0Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D48C3FCD2BB07DCB00EE3ABE /* MJSUITests */ = {
+		D48C3FCD2BB07DCB00EE3ABE /* MahJong_Scores_2_0UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D48C3FDE2BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MJSUITests" */;
+			buildConfigurationList = D48C3FDE2BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MahJong_Scores_2_0UITests" */;
 			buildPhases = (
 				D48C3FCA2BB07DCB00EE3ABE /* Sources */,
 				D48C3FCB2BB07DCB00EE3ABE /* Frameworks */,
@@ -248,9 +236,9 @@
 			dependencies = (
 				D48C3FD02BB07DCB00EE3ABE /* PBXTargetDependency */,
 			);
-			name = MJSUITests;
+			name = MahJong_Scores_2_0UITests;
 			productName = MJSUITests;
-			productReference = D48C3FCE2BB07DCB00EE3ABE /* MJSUITests.xctest */;
+			productReference = D48C3FCE2BB07DCB00EE3ABE /* MahJong_Scores_2_0UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -276,7 +264,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D48C3FAD2BB07DC900EE3ABE /* Build configuration list for PBXProject "MJS" */;
+			buildConfigurationList = D48C3FAD2BB07DC900EE3ABE /* Build configuration list for PBXProject "MahJong_Scores_2_0" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -289,9 +277,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D48C3FB12BB07DC900EE3ABE /* MJS */,
-				D48C3FC32BB07DCB00EE3ABE /* MJSTests */,
-				D48C3FCD2BB07DCB00EE3ABE /* MJSUITests */,
+				D48C3FB12BB07DC900EE3ABE /* MahJong_Scores_2_0 */,
+				D48C3FC32BB07DCB00EE3ABE /* MahJong_Scores_2_0Tests */,
+				D48C3FCD2BB07DCB00EE3ABE /* MahJong_Scores_2_0UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -339,7 +327,7 @@
 				D4F490E62BBB3FF400B6F474 /* PrintTournament.swift in Sources */,
 				D4F490E22BBB2CFE00B6F474 /* DateToString.swift in Sources */,
 				D4F4905C2BB5DA5500B6F474 /* CompleteGameView.swift in Sources */,
-				D48C3FB62BB07DC900EE3ABE /* MJSApp.swift in Sources */,
+				D48C3FB62BB07DC900EE3ABE /* MahJong_Scores_2_0App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,8 +342,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48C3FD32BB07DCB00EE3ABE /* MJSUITests.swift in Sources */,
-				D48C3FD52BB07DCB00EE3ABE /* MJSUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,12 +350,12 @@
 /* Begin PBXTargetDependency section */
 		D48C3FC62BB07DCB00EE3ABE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D48C3FB12BB07DC900EE3ABE /* MJS */;
+			target = D48C3FB12BB07DC900EE3ABE /* MahJong_Scores_2_0 */;
 			targetProxy = D48C3FC52BB07DCB00EE3ABE /* PBXContainerItemProxy */;
 		};
 		D48C3FD02BB07DCB00EE3ABE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D48C3FB12BB07DC900EE3ABE /* MJS */;
+			target = D48C3FB12BB07DC900EE3ABE /* MahJong_Scores_2_0 */;
 			targetProxy = D48C3FCF2BB07DCB00EE3ABE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -499,9 +485,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MahJong_Scores_2_0/MahJong_Scores_2_0.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MJS/Launch/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MahJong_Scores_2_0/Launch/Preview Content\"";
 				DEVELOPMENT_TEAM = 3SPAAQ6SK2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -515,7 +502,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goedman.MJS;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goedman.MahJong-Scores-2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -528,9 +515,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MahJong_Scores_2_0/MahJong_Scores_2_0.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MJS/Launch/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MahJong_Scores_2_0/Launch/Preview Content\"";
 				DEVELOPMENT_TEAM = 3SPAAQ6SK2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -544,7 +532,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goedman.MJS;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goedman.MahJong-Scores-2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -568,7 +556,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MJS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MJS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MahJong_Scores_2_0.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MahJong_Scores_2_0";
 			};
 			name = Debug;
 		};
@@ -588,7 +576,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MJS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MJS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MahJong_Scores_2_0.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MahJong_Scores_2_0";
 			};
 			name = Release;
 		};
@@ -631,7 +619,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D48C3FAD2BB07DC900EE3ABE /* Build configuration list for PBXProject "MJS" */ = {
+		D48C3FAD2BB07DC900EE3ABE /* Build configuration list for PBXProject "MahJong_Scores_2_0" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D48C3FD62BB07DCB00EE3ABE /* Debug */,
@@ -640,7 +628,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D48C3FD82BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MJS" */ = {
+		D48C3FD82BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MahJong_Scores_2_0" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D48C3FD92BB07DCB00EE3ABE /* Debug */,
@@ -649,7 +637,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D48C3FDB2BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MJSTests" */ = {
+		D48C3FDB2BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MahJong_Scores_2_0Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D48C3FDC2BB07DCB00EE3ABE /* Debug */,
@@ -658,7 +646,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D48C3FDE2BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MJSUITests" */ = {
+		D48C3FDE2BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MahJong_Scores_2_0UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D48C3FDF2BB07DCB00EE3ABE /* Debug */,
