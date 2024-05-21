@@ -1,8 +1,9 @@
-# MJS.swift
+# MahJongS_Scores_2_0.swift
 
 ## Purpose
 
-MJS.swift is an IOS application to keep scores of one or more MahJong tournaments.
+MahJong_Scores_2_0.swift is an IOS application to keep scores of one or more MahJong tournaments.
+This project uses CloudKit to sync owner's devices.
 
 A MahJong tournament consists of all four players being the wind players for all 4 winds. Thus in total at least 26 games, but usually more. 
 
