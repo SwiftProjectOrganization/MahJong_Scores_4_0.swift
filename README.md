@@ -1,4 +1,4 @@
-# MahJongS_Scores_2_0.swift
+# MahJong_Scores_2_0.swift
 
 ## Purpose
 
