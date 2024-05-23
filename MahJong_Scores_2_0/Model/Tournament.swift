@@ -153,6 +153,7 @@ extension Tournament {
   func updateTournamentScore(_ tournament: Tournament) {
     if tournament.gameWinnerName == tournament.windPlayer {
       for i in 0...3 {
+        // Settle between winner and other players if game winner is wind player
         let pi = tournament.players![i]
         if pi == tournament.gameWinnerName {
           tournament.playerTournamentScore![pi]! += 6 * tournament.playerGameScore![tournament.gameWinnerName!]!
@@ -168,6 +169,7 @@ extension Tournament {
         }
       }
     } else {
+      // Game winner is not the wind player
       for i in 0...3 {
         let pi = tournament.players![i]
         if pi == tournament.gameWinnerName {
@@ -196,8 +198,26 @@ extension Tournament {
       }
       tournament.scheduleItem += 1
       if tournament.scheduleItem < 16 {
+        //
+        // Generate the state of the tournament based on scheduleItem
+        //
+        // If scheduleItem == 0
+        // tmp = (["East", "South", "West", "North"], ["Liesbeth", "Rob", "Nancy", "Carel"])
+        // If scheduleItem == 1
+        // tmp = [["East", "South", "West", "North"], [["Rob", "Nancy", "Carel", "Liesbeth"]]
+        // ...
+        // If scheduleItem == 4:
+        // tmp = (["South", "West", "North", "East"], ["Rob", "Nancy", "Carel", "Liesbeth"])
+        // ...
+        //
+        // (7, (["South", "West", "North", "East"], ["Liesbeth", "Rob", "Nancy", "Carel"]))
+        // (8, (["West", "North", "East", "South"], ["Nancy", "Carel", "Liesbeth", "Rob"]))
+        // (9, (["West", "North", "East", "South"], ["Carel", "Liesbeth", "Rob", "Nancy"]))
+        //
+        // Until scheduleItem == 16, at which point the tournament is "Done".
+        //
         let tmp = tournament.windsAndPlayers(tournament.winds!, tournament.players!, tournament.scheduleItem)
-        print(tmp)
+        print((tournament.scheduleItem, tmp))
         tournament.windsToPlayersInGame = Dictionary(uniqueKeysWithValues: zip(tmp.0, tmp.1))
         tournament.playersToWindsInGame = Dictionary(uniqueKeysWithValues: zip(tmp.1, tmp.0))
         tournament.currentWind = tmp.0[0]
