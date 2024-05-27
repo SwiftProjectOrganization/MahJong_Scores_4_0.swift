@@ -13,6 +13,10 @@ struct AddTournamentView {
   @State private var sp: String = ""
   @State private var tp: String = ""
   @State private var lp: String = ""
+  @State var selectedRotation: RotateClockwiseType = .clockwise
+  @State var selectedRuleSet: RuleSetType = .traditional
+  @AppStorage("rotateClockwise") private var rotateClockwise: Bool = true
+  @AppStorage("ruleSet") private var ruleSet: String = "Traditional"
   @Environment(\.scenePhase) private var scenePhase
   @FocusState private var focusedField
   @Environment(\.dismiss) private var dismiss
@@ -23,8 +27,8 @@ extension AddTournamentView: View {
   var body: some View {
     VStack {
       Spacer()
-      Text("Enter all 4 players and press `save`.")
-        .font(.largeTitle)
+      Text("Enter all 4 players, select rotation direction and rule set and press `save`.")
+        .font(.title)
       Spacer()
       HStack {
         TextField("East wind player", text: $fp)
@@ -33,20 +37,24 @@ extension AddTournamentView: View {
           .font(.largeTitle)
       }
       HStack {
-        TextField("South wind player", text: $sp)
+        TextField("Player to the right of East (South)", text: $sp)
           .multilineTextAlignment(.center)
           .font(.largeTitle)
       }
       HStack {
-        TextField("West wind player:", text: $tp)
+        TextField("Player to the right of South (West)", text: $tp)
           .multilineTextAlignment(.center)
           .font(.largeTitle)
       }
       HStack {
-        TextField("North wind player", text: $lp)
+        TextField("Player to the right of West (North)", text: $lp)
           .multilineTextAlignment(.center)
           .font(.largeTitle)
       }
+      Spacer()
+      RotateClockwisePickerView(selectedRotation: $selectedRotation)
+      Spacer()
+      RuleSetPickerView(selectedRuleSet: $selectedRuleSet)
       Spacer()
       HStack {
         Spacer()
@@ -54,10 +62,12 @@ extension AddTournamentView: View {
                role: .cancel) {
           dismiss()
         }
+        .buttonStyle(.borderedProminent)
         Spacer()
         Button("Save",
                action: save)
         .disabled(fp.isEmpty || sp.isEmpty || tp.isEmpty || lp.isEmpty)
+        .buttonStyle(.borderedProminent)
         Spacer()
       }
       .font(.largeTitle)
@@ -86,6 +96,8 @@ extension AddTournamentView {
     tournament.currentWind = tmp.0[0]
     tournament.windPlayer = tmp.1[0]
     tournament.lastGame! += 1
+    tournament.ruleSet = selectedRuleSet.description
+    tournament.rotateClockwise = (selectedRotation == RotateClockwiseType.clockwise ? true : false)
     tournament.fpScores!.append(Score(fp, tournament.lastGame!, 2000))
     tournament.spScores!.append(Score(sp, tournament.lastGame!, 2000))
     tournament.tpScores!.append(Score(tp, tournament.lastGame!, 2000))
@@ -95,6 +107,6 @@ extension AddTournamentView {
   }
 }
 
-#Preview {
-  AddTournamentView()
-}
+//#Preview {
+//  AddTournamentView()
+//}

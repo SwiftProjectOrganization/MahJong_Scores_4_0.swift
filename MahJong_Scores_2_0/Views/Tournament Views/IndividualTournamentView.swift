@@ -8,7 +8,6 @@
 import SwiftUI
 import SwiftData
 
-
 struct IndividualTournamentView {
   @State private var title = ""
   @State private var isAddingGame = false
@@ -32,19 +31,48 @@ extension IndividualTournamentView: View {
         Section("Players") {
           HStack {
             Spacer()
-            Text(createPlayerLabel(tournament, 0))
-              .font(.headline)
-            Spacer()
+            if tournament.fpName == tournament.windPlayer {
+              Text(createPlayerLabel(tournament, 0))
+                .font(.headline)
+                .foregroundColor(.blue)
+            } else {
+              Text(createPlayerLabel(tournament, 0))
+                .font(.headline)
+            }
+           Spacer()
           }
           HStack {
-            Text(createPlayerLabel(tournament, 3));
-            Spacer();
-            Text(createPlayerLabel(tournament, 1))
+            if tournament.spName == tournament.windPlayer {
+              Text(createPlayerLabel(tournament, 1))
+                .font(.headline)
+                .foregroundColor(.blue)
+            } else {
+              Text(createPlayerLabel(tournament, 1))
+                .font(.headline)
+            }
+            Spacer()
+            if tournament.lpName == tournament.windPlayer {
+              Text(createPlayerLabel(tournament, 3))
+                .font(.headline)
+                .foregroundColor(.blue)
+            } else {
+              Text(createPlayerLabel(tournament, 3))
+                .font(.headline)
+            }
           }
           .font(.headline)
 
           HStack {
-            Spacer();Text(createPlayerLabel(tournament, 2));Spacer()
+            Spacer()
+            if tournament.tpName == tournament.windPlayer {
+              Text(createPlayerLabel(tournament, 2))
+                .font(.headline)
+                .foregroundColor(.blue)
+            } else {
+              Text(createPlayerLabel(tournament, 2))
+                .font(.headline)
+            }
+            Spacer()
           }
           .font(.headline)
         }
@@ -76,8 +104,6 @@ extension IndividualTournamentView: View {
 
 extension IndividualTournamentView {
   private func createPlayerLabel(_ tournament: Tournament, _ index: Int) -> String {
-    //let currentWind = tournament.winds![index]
-    //let player = tournament.windsToPlayersInGame![currentWind]
     let player = [tournament.fpName!, tournament.spName!, tournament.tpName!, tournament.lpName!][index]
     let currentWind = tournament.playersToWindsInGame![player]
     let score = tournament.playerTournamentScore![player]

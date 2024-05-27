@@ -14,8 +14,8 @@ public class Tournament {
 
   // Tournament wide settings, currently not used
   
-  let rotateClockwise: Bool?
-  let ruleSet: String?
+  var rotateClockwise: Bool?
+  var ruleSet: String?
   let startDate: String?
   
   // Tournament wide values
