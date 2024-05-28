@@ -13,7 +13,7 @@ struct AddTournamentView {
   @State private var sp: String = ""
   @State private var tp: String = ""
   @State private var lp: String = ""
-  @State var selectedRotation: RotateClockwiseType = .clockwise
+  @State var selectedRotation: RotateClockwiseType = .counterClockwise
   @State var selectedRuleSet: RuleSetType = .traditional
   @AppStorage("rotateClockwise") private var rotateClockwise: Bool = true
   @AppStorage("ruleSet") private var ruleSet: String = "Traditional"
@@ -37,17 +37,17 @@ extension AddTournamentView: View {
           .font(.largeTitle)
       }
       HStack {
-        TextField("Player to the right of East (South)", text: $sp)
+        TextField("South (to the right of East)", text: $sp)
           .multilineTextAlignment(.center)
           .font(.largeTitle)
       }
       HStack {
-        TextField("Player to the right of South (West)", text: $tp)
+        TextField("West (to the right of South)", text: $tp)
           .multilineTextAlignment(.center)
           .font(.largeTitle)
       }
       HStack {
-        TextField("Player to the right of West (North)", text: $lp)
+        TextField("North (to the right of West)", text: $lp)
           .multilineTextAlignment(.center)
           .font(.largeTitle)
       }

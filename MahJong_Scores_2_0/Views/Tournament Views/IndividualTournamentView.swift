@@ -22,13 +22,16 @@ extension IndividualTournamentView: View {
       List {
         Section("Tournament") {
           VStack {
-            Text(tournament.title)
+            TournamentTitleView(tournament: tournament)
+            Spacer()
           }
+        }
+        Section("Graph") {
           VStack {
             GameGraphView(tournament: tournament)
           }
         }
-        Section("Players") {
+        Section("Player positions") {
           HStack {
             Spacer()
             if tournament.fpName == tournament.windPlayer {
@@ -87,7 +90,6 @@ extension IndividualTournamentView: View {
           .multilineTextAlignment(.center)
         }
       }
-      
       .sheet(isPresented: $isCompleteGameViewDisplayed) {
         CompleteGameView(tournament: $tournament,
                          isCompleteGameViewDisplayed: .constant(true))

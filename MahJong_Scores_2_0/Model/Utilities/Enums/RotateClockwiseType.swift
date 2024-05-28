@@ -30,17 +30,8 @@ extension RotateClockwiseType: CustomStringConvertible {
 }
 
 extension RotateClockwiseType {
-  var iconName: String {
-    switch self {
-    case .clockwise: "bicycle"
-    case .counterClockwise: "scooter"
-    }
-  }
-}
-
-extension RotateClockwiseType {
   static func random() -> RotateClockwiseType {
-    rotateClockwiseTypes.randomElement() ?? .clockwise
+    rotateClockwiseTypes.randomElement() ?? .counterClockwise
   }
 }
 

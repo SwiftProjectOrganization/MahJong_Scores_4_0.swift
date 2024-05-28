@@ -88,6 +88,12 @@ extension Tournament {
 }
 
 extension Tournament {
+    var titleArray: Array<String> {
+      [currentWind!, startDate!, fpName!, spName!, tpName!, lpName!]
+    }
+}
+
+extension Tournament {
   var sortedFpScores: [Score] {
     let scores = self.fpScores!.filter { $0.tournament! == self }
     let sortedScores = scores.sorted {$0.game! < $1.game!}

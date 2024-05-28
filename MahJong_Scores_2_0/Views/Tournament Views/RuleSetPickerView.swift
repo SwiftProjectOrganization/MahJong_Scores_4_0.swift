@@ -25,7 +25,6 @@ extension RuleSetPickerView: View {
     .padding(.horizontal)
     .onChange(of: selectedRuleSet) { oldValue, newValue in
       selectedRuleSet = newValue
-      print(newValue)
     }
   }
 }

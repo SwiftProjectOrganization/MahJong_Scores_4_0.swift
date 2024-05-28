@@ -26,7 +26,6 @@ extension RotateClockwisePickerView: View {
     .padding(.horizontal)
     .onChange(of: selectedRotation) { oldValue, newValue in
       selectedRotation = newValue
-      print(newValue)
     }
   }
 }
