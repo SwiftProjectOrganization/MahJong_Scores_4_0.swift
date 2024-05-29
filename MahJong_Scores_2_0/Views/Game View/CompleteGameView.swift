@@ -132,8 +132,6 @@ extension CompleteGameView {
 
 extension CompleteGameView {
   private func save(_ tournament: Tournament) {
-    //print((gameWinnerName, gameSpName, gameTpName, gameLpName))
-    //print((gameWinnerScore, gameSpScore, gameTpScore, gameLpScore))
     tournament.lastGame! += 1
     tournament.gameWinnerName = gameWinnerName
     tournament.playerGameScore![gameWinnerName] = Int(gameWinnerScore)
@@ -141,7 +139,6 @@ extension CompleteGameView {
     tournament.playerGameScore![gameTpName] = Int(gameTpScore)
     tournament.playerGameScore![gameLpName] = Int(gameLpScore)
     tournament.updateTournamentScore(tournament)
-    //printTournament(tournament)
     focusedField = false
     dismiss()
   }

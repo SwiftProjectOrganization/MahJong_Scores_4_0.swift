@@ -52,3 +52,8 @@ extension TournamentView: View {
     }
   }
 }
+
+#Preview {
+    TournamentView()
+    .modelContainer(previewContainer)
+}
