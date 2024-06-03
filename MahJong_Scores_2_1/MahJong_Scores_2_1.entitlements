@@ -6,7 +6,7 @@
 	<string>development</string>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
-		<string>iCloud.MahJong_Scores_2_1</string>
+		<string>iCloud.MahJongg_Scores_3_1</string>
 	</array>
 	<key>com.apple.developer.icloud-services</key>
 	<array>

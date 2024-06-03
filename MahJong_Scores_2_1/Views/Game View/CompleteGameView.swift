@@ -139,11 +139,62 @@ extension CompleteGameView {
     tournament.pgScore![gameSpName] = Int(gameSpScore)
     tournament.pgScore![gameTpName] = Int(gameTpScore)
     tournament.pgScore![gameLpName] = Int(gameLpScore)
-    tournament.updateTournamentScore(tournament)
+    updateTraditionalTournamentScore(tournament)
     focusedField = false
     dismiss()
   }
 }
 
+func updateTraditionalTournamentScore(_ tournament: Tournament) {
+  if tournament.gameWinnerName == tournament.windPlayer {
+    for i in 0...3 {
+      // Settle between winner and other players if game winner is wind player
+      let pi = tournament.players![i]
+      if pi == tournament.gameWinnerName {
+        tournament.ptScore![pi]! += 6 * tournament.pgScore![tournament.gameWinnerName!]!
+      } else {
+        tournament.ptScore![pi]! -= 2 * tournament.pgScore![tournament.gameWinnerName!]!
+        for j in 0...3 {
+          let pj = tournament.players![j]
+          if pi != pj && pj != tournament.gameWinnerName {
+            // Settle between non-winners
+            tournament.ptScore![pi]! += tournament.pgScore![pi]! - tournament.pgScore![pj]!
+          }
+        }
+      }
+    }
+  } else {
+    // Game winner is not the wind player
+    for i in 0...3 {
+      let pi = tournament.players![i]
+      if pi == tournament.gameWinnerName {
+        tournament.ptScore![pi]! += 4 * tournament.pgScore![tournament.gameWinnerName!]!
+      } else {
+        if pi == tournament.windPlayer {
+          tournament.ptScore![pi]! -= 2 * tournament.pgScore![tournament.gameWinnerName!]!
+        } else {
+          tournament.ptScore![pi]! -= 1 * tournament.pgScore![tournament.gameWinnerName!]!
+        }
+        for j in 0...3 {
+          let pj = tournament.players![j]
+          if pi != pj {
+            if pi != tournament.gameWinnerName && pj != tournament.gameWinnerName {
+              // Settle between non-winners
+              let dif = tournament.pgScore![pi]! - tournament.pgScore![pj]!
+              if pi == tournament.windPlayer || pj == tournament.windPlayer {
+                tournament.ptScore![pi]! += 2 * dif
+              } else {
+                tournament.ptScore![pi]! += 1 * dif
+              }
+            }
+          }
+        }
+      }
+    }
+    tournament.scheduleItem += 1
+    tournament.updateTournamentStatus()
+   }
+  tournament.updateGameScores()
+}
 
 

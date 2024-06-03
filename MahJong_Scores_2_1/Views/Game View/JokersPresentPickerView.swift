@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct JokersPresentPickerView {
-  @State var jokersPresent: JokersPresentType
+  @Binding var jokersPresent: JokersPresentType
 }
 
 extension JokersPresentPickerView : View {
@@ -32,6 +32,6 @@ extension JokersPresentPickerView : View {
   }
 }
 
-#Preview {
-  JokersPresentPickerView(jokersPresent: JokersPresentType.no)
-}
+//#Preview {
+//  JokersPresentPickerView(jokersPresent: JokersPresentType.no)
+//}

@@ -55,8 +55,8 @@ extension CompleteAmericanGameView: View {
             Section("Last tile from, jokers in MahJong hand:") {
               VStack {
                 LastTilePickerView(players: tournament.players!,
-                                   selection: lastTileSource)
-                JokersPresentPickerView(jokersPresent: jokersPresent)
+                                   lastTileSource: $lastTileSource)
+                JokersPresentPickerView(jokersPresent: $jokersPresent)
               }
             }
             Section("Cancel or save:") {
@@ -124,8 +124,54 @@ extension CompleteAmericanGameView {
     tournament.pgScore![gameSpName] = Int(gameSpScore)
     tournament.pgScore![gameTpName] = Int(gameTpScore)
     tournament.pgScore![gameLpName] = Int(gameLpScore)
-    //tournament.updateTournamentScore(tournament)
+    updateAmericanTournamentScore(tournament, gameWinnerName, 
+                                  Int(gameWinnerScore)!,
+                                  Int(jokersPresent.rawValue),
+                                  tournament.players![lastTileSource.rawValue])
     focusedField = false
     dismiss()
   }
 }
+
+func updateAmericanTournamentScore(_ tournament: Tournament,
+                                   _ gameWinnerName: String,
+                                   _ gameWinnerScore: Int,
+                                   _ jokersPresent: Int,
+                                   _ lastTileSource: String) {
+  var score = gameWinnerScore
+  print(jokersPresent)
+  if jokersPresent == 1 {
+    score *= 2
+  }
+  if gameWinnerName == lastTileSource {
+    print([gameWinnerName, lastTileSource])
+    // Game winner didn draw last tile
+    for i in 0...3 {
+      let pi = tournament.players![i]
+      if pi == gameWinnerName {
+        tournament.ptScore![pi]! += 6 * score
+      } else {
+        tournament.ptScore![pi]! -= 2 * score
+      }
+    }
+  } else {
+    // Game winner didn't draw last tile
+    print([gameWinnerName, lastTileSource])
+    for i in 0...3 {
+      let pi = tournament.players![i]
+      if pi == gameWinnerName {
+        tournament.ptScore![pi]! += 4 * score
+      } else {
+        if pi == lastTileSource {
+          tournament.ptScore![pi]! -= 2 * score
+        } else {
+          tournament.ptScore![pi]! -= 1 * score
+        }
+      }
+    }
+  }
+  tournament.scheduleItem += 1
+  tournament.updateTournamentStatus()
+  tournament.updateGameScores()
+}
+

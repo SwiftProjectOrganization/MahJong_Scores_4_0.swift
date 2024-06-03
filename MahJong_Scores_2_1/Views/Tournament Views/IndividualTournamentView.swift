@@ -85,7 +85,7 @@ extension IndividualTournamentView: View {
           Button("Game completed") {
             isCompleteGameViewDisplayed = true
           }
-          .disabled(tournament.scheduleItem > 15)
+          .disabled(tournament.currentWind == "Done")
           .buttonBorderShape(.roundedRectangle)
           .buttonStyle(.borderedProminent)
           .multilineTextAlignment(.center)

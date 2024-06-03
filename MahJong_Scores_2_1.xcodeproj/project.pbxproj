@@ -58,6 +58,7 @@
 		D48C3FEE2BB1FC8300EE3ABE /* TournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentView.swift; sourceTree = "<group>"; };
 		D48C3FF42BB2057200EE3ABE /* AddTournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTournamentView.swift; sourceTree = "<group>"; };
 		D48C3FF62BB205A600EE3ABE /* IndividualTournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualTournamentView.swift; sourceTree = "<group>"; };
+		D4D23E6A2C0E1C310015819C /* MahJong-Scores-2-1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MahJong-Scores-2-1-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D4F4905B2BB5DA5500B6F474 /* CompleteGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteGameView.swift; sourceTree = "<group>"; };
 		D4F490E12BBB2CFE00B6F474 /* DateToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToString.swift; sourceTree = "<group>"; };
 		D4F490E52BBB3FF400B6F474 /* PrintTournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTournament.swift; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 		D48C3FB42BB07DC900EE3ABE /* MahJong_Scores_2_1 */ = {
 			isa = PBXGroup;
 			children = (
+				D4D23E6A2C0E1C310015819C /* MahJong-Scores-2-1-Info.plist */,
 				D48C3FB72BB07DC900EE3ABE /* ContentView.swift */,
 				D48C3FE12BB07E9200EE3ABE /* Views */,
 				D48C3FE22BB07EC600EE3ABE /* Launch */,
@@ -416,6 +418,7 @@
 				DEVELOPMENT_TEAM = 3SPAAQ6SK2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MahJong-Scores-2-1-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -446,6 +449,7 @@
 				DEVELOPMENT_TEAM = 3SPAAQ6SK2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MahJong-Scores-2-1-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

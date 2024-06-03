@@ -15,6 +15,8 @@ extension TournamentTitleView: View {
   var body: some View {
     VStack {
       HStack {
+        Text("\(tournament.ruleSet!): ")
+        Spacer()
         Text(tournament.currentWind!)
           .font(.headline)
           .foregroundColor(.blue)

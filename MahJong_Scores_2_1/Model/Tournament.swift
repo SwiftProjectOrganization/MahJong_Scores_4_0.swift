@@ -84,7 +84,7 @@ public class Tournament {
 
 extension Tournament {
     var title: String {
-      "\(currentWind!) - \(startDate!): \n\(fpName!) \(spName!) \(tpName!) \(lpName!)"
+      "\(self.ruleSet!) tournament: \(currentWind!) \n \(startDate!):\(fpName!) \(spName!) \(tpName!) \(lpName!)"
     }
 }
 
@@ -157,87 +157,45 @@ extension Tournament {
 }
 
 extension Tournament {
-  func updateTournamentScore(_ tournament: Tournament) {
-    if tournament.gameWinnerName == tournament.windPlayer {
-      for i in 0...3 {
-        // Settle between winner and other players if game winner is wind player
-        let pi = tournament.players![i]
-        if pi == tournament.gameWinnerName {
-          tournament.ptScore![pi]! += 6 * tournament.pgScore![tournament.gameWinnerName!]!
-        } else {
-          tournament.ptScore![pi]! -= 2 * tournament.pgScore![tournament.gameWinnerName!]!
-          for j in 0...3 {
-            let pj = tournament.players![j]
-            if pi != pj && pj != tournament.gameWinnerName {
-              // Settle between non-winners
-              tournament.ptScore![pi]! += tournament.pgScore![pi]! - tournament.pgScore![pj]!
-            }
-          }
-        }
-      }
+  func updateTournamentStatus() {
+    if self.scheduleItem < (self.ruleSet! == "Traditional" ? 16 : 4) {
+      //
+      // Generate the state of the tournament based on scheduleItem
+      //
+      // If scheduleItem == 0
+      // tmp = (["East", "South", "West", "North"], ["Liesbeth", "Rob", "Nancy", "Carel"])
+      // If scheduleItem == 1
+      // tmp = [["East", "South", "West", "North"], [["Rob", "Nancy", "Carel", "Liesbeth"]]
+      // ...
+      // If scheduleItem == 4:
+      // tmp = (["South", "West", "North", "East"], ["Rob", "Nancy", "Carel", "Liesbeth"])
+      // ...
+      //
+      // (7, (["South", "West", "North", "East"], ["Liesbeth", "Rob", "Nancy", "Carel"]))
+      // (8, (["West", "North", "East", "South"], ["Nancy", "Carel", "Liesbeth", "Rob"]))
+      // (9, (["West", "North", "East", "South"], ["Carel", "Liesbeth", "Rob", "Nancy"]))
+      //
+      // Until scheduleItem == 16, at which point the tournament is "Done".
+      //
+      let tmp = self.windsAndPlayers(self.winds!, self.players!, self.scheduleItem)
+      //print((self.scheduleItem, tmp))
+      self.windsToPlayersInGame = Dictionary(uniqueKeysWithValues: zip(tmp.0, tmp.1))
+      self.playersToWindsInGame = Dictionary(uniqueKeysWithValues: zip(tmp.1, tmp.0))
+      self.currentWind = tmp.0[0]
+      self.windPlayer = tmp.1[0]
+      self.winds = tmp.0
+      self.players = tmp.1
     } else {
-      // Game winner is not the wind player
-      for i in 0...3 {
-        let pi = tournament.players![i]
-        if pi == tournament.gameWinnerName {
-          tournament.ptScore![pi]! += 4 * tournament.pgScore![tournament.gameWinnerName!]!
-        } else {
-          if pi == tournament.windPlayer {
-            tournament.ptScore![pi]! -= 2 * tournament.pgScore![tournament.gameWinnerName!]!
-          } else {
-            tournament.ptScore![pi]! -= 1 * tournament.pgScore![tournament.gameWinnerName!]!
-          }
-          for j in 0...3 {
-            let pj = tournament.players![j]
-            if pi != pj {
-              if pi != tournament.gameWinnerName && pj != tournament.gameWinnerName {
-                // Settle between non-winners
-                let dif = tournament.pgScore![pi]! - tournament.pgScore![pj]!
-                if pi == tournament.windPlayer || pj == tournament.windPlayer {
-                  tournament.ptScore![pi]! += 2 * dif
-                } else {
-                  tournament.ptScore![pi]! += 1 * dif
-                }
-              }
-            }
-          }
-        }
-      }
-      tournament.scheduleItem += 1
-      if tournament.scheduleItem < 16 {
-        //
-        // Generate the state of the tournament based on scheduleItem
-        //
-        // If scheduleItem == 0
-        // tmp = (["East", "South", "West", "North"], ["Liesbeth", "Rob", "Nancy", "Carel"])
-        // If scheduleItem == 1
-        // tmp = [["East", "South", "West", "North"], [["Rob", "Nancy", "Carel", "Liesbeth"]]
-        // ...
-        // If scheduleItem == 4:
-        // tmp = (["South", "West", "North", "East"], ["Rob", "Nancy", "Carel", "Liesbeth"])
-        // ...
-        //
-        // (7, (["South", "West", "North", "East"], ["Liesbeth", "Rob", "Nancy", "Carel"]))
-        // (8, (["West", "North", "East", "South"], ["Nancy", "Carel", "Liesbeth", "Rob"]))
-        // (9, (["West", "North", "East", "South"], ["Carel", "Liesbeth", "Rob", "Nancy"]))
-        //
-        // Until scheduleItem == 16, at which point the tournament is "Done".
-        //
-        let tmp = tournament.windsAndPlayers(tournament.winds!, tournament.players!, tournament.scheduleItem)
-        //print((tournament.scheduleItem, tmp))
-        tournament.windsToPlayersInGame = Dictionary(uniqueKeysWithValues: zip(tmp.0, tmp.1))
-        tournament.playersToWindsInGame = Dictionary(uniqueKeysWithValues: zip(tmp.1, tmp.0))
-        tournament.currentWind = tmp.0[0]
-        tournament.windPlayer = tmp.1[0]
-        tournament.winds = tmp.0
-        tournament.players = tmp.1
-      } else {
-        tournament.currentWind = "Done"
-      }
+      self.currentWind = "Done"
     }
-    tournament.fpScores!.append(Score(tournament.fpName!, tournament.lastGame!, tournament.ptScore![tournament.fpName!]!))
-    tournament.spScores!.append(Score(tournament.spName!, tournament.lastGame!, tournament.ptScore![tournament.spName!]!))
-    tournament.tpScores!.append(Score(tournament.tpName!, tournament.lastGame!, tournament.ptScore![tournament.tpName!]!))
-    tournament.lpScores!.append(Score(tournament.lpName!, tournament.lastGame!, tournament.ptScore![tournament.lpName!]!))
+  }
+}
+
+extension Tournament {
+  func updateGameScores() {
+    self.fpScores!.append(Score(self.fpName!, self.lastGame!, self.ptScore![self.fpName!]!))
+    self.spScores!.append(Score(self.spName!, self.lastGame!, self.ptScore![self.spName!]!))
+    self.tpScores!.append(Score(self.tpName!, self.lastGame!, self.ptScore![self.tpName!]!))
+    self.lpScores!.append(Score(self.lpName!, self.lastGame!, self.ptScore![self.lpName!]!))
   }
 }

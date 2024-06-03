@@ -9,26 +9,25 @@ import SwiftUI
 
 struct LastTilePickerView: View {
   @State var players: [String]
-  @State var selection: LastTileType = LastTileType.firstPlayer
+  @Binding var lastTileSource: LastTileType
   
   var body: some View {
     VStack {
-        HStack {
-            Picker("Source of last tile?", selection: $selection) {
-              ForEach(LastTileType.allCases, id: \.self) { aValidSelection in
-                Text(players[aValidSelection.rawValue])
-                  .padding()
-              }
+      HStack {
+          Picker("Source of last tile?", selection: $lastTileSource) {
+            ForEach(LastTileType.allCases, id: \.self) { aValidSelection in
+              Text(players[aValidSelection.rawValue])
+                .padding()
             }
-            .pickerStyle(.segmented)
-            .padding()
-        }
-        //Text("Value: \(players[selection.rawValue])")
+          }
+          .pickerStyle(.segmented)
+          .padding()
+      }
     }
   }
 }
 
-#Preview {
-  LastTilePickerView(players: ["Liesbeth", "Rob", "Nancy", "CareL"],
-                     selection: LastTileType.firstPlayer)
-}
+//#Preview {
+//  LastTilePickerView(players: ["Liesbeth", "Rob", "Nancy", "CareL"],
+//                     lastTileSource: $LastTileType.firstPlayer)
+//}
