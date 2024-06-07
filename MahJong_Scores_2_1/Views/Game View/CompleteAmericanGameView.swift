@@ -121,9 +121,9 @@ extension CompleteAmericanGameView {
     tournament.lastGame! += 1
     tournament.gameWinnerName = gameWinnerName
     tournament.pgScore![gameWinnerName] = Int(gameWinnerScore)
-    tournament.pgScore![gameSpName] = Int(gameSpScore)
-    tournament.pgScore![gameTpName] = Int(gameTpScore)
-    tournament.pgScore![gameLpName] = Int(gameLpScore)
+    tournament.pgScore![gameSpName] = Int(0)
+    tournament.pgScore![gameTpName] = Int(0)
+    tournament.pgScore![gameLpName] = Int(0)
     updateAmericanTournamentScore(tournament, gameWinnerName, 
                                   Int(gameWinnerScore)!,
                                   Int(jokersPresent.rawValue),

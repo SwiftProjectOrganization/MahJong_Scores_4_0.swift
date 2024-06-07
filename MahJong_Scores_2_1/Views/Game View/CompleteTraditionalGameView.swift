@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct CompleteGameView {
+struct CompleteTraditionalGameView {
   @Binding var tournament: Tournament
   @Binding var isCompleteGameViewDisplayed: Bool
   
@@ -27,7 +27,7 @@ struct CompleteGameView {
 }
 
 
-extension CompleteGameView: View {
+extension CompleteTraditionalGameView: View {
     var body: some View {
       VStack(spacing: 50) {
         Text("Enter game scores and press `save`.")
@@ -112,7 +112,7 @@ extension CompleteGameView: View {
     }
 }
 
-extension CompleteGameView {
+extension CompleteTraditionalGameView {
   func anyFieldEmpty() -> Bool {
     let namesEmpty = gameWinnerName.isEmpty || gameSpName.isEmpty || gameTpName.isEmpty || gameLpName.isEmpty
     let scoresEmpty = gameWinnerScore.isEmpty || gameSpScore.isEmpty || gameTpScore.isEmpty || gameLpScore.isEmpty
@@ -120,7 +120,7 @@ extension CompleteGameView {
   }
 }
 
-extension CompleteGameView {
+extension CompleteTraditionalGameView {
   func rotate() {
     //print("Rotate called")
     let tmpName = gameWinnerName
@@ -131,7 +131,7 @@ extension CompleteGameView {
   }
 }
 
-extension CompleteGameView {
+extension CompleteTraditionalGameView {
   private func save(_ tournament: Tournament) {
     tournament.lastGame! += 1
     tournament.gameWinnerName = gameWinnerName

@@ -93,7 +93,7 @@ extension IndividualTournamentView: View {
       }
       .sheet(isPresented: $isCompleteGameViewDisplayed) {
         if tournament.ruleSet == "Traditional" {
-          CompleteGameView(tournament: $tournament,
+          CompleteTraditionalGameView(tournament: $tournament,
                            isCompleteGameViewDisplayed: .constant(true))
         } else {
           CompleteAmericanGameView(tournament: $tournament,

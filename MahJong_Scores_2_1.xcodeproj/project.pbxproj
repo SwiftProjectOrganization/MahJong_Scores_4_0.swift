@@ -29,7 +29,7 @@
 		D48C3FEF2BB1FC8300EE3ABE /* TournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FEE2BB1FC8300EE3ABE /* TournamentView.swift */; };
 		D48C3FF52BB2057200EE3ABE /* AddTournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FF42BB2057200EE3ABE /* AddTournamentView.swift */; };
 		D48C3FF72BB205A600EE3ABE /* IndividualTournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FF62BB205A600EE3ABE /* IndividualTournamentView.swift */; };
-		D4F4905C2BB5DA5500B6F474 /* CompleteGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4905B2BB5DA5500B6F474 /* CompleteGameView.swift */; };
+		D4F4905C2BB5DA5500B6F474 /* CompleteTraditionalGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4905B2BB5DA5500B6F474 /* CompleteTraditionalGameView.swift */; };
 		D4F490E22BBB2CFE00B6F474 /* DateToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F490E12BBB2CFE00B6F474 /* DateToString.swift */; };
 		D4F490E62BBB3FF400B6F474 /* PrintTournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F490E52BBB3FF400B6F474 /* PrintTournament.swift */; };
 /* End PBXBuildFile section */
@@ -59,7 +59,7 @@
 		D48C3FF42BB2057200EE3ABE /* AddTournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTournamentView.swift; sourceTree = "<group>"; };
 		D48C3FF62BB205A600EE3ABE /* IndividualTournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualTournamentView.swift; sourceTree = "<group>"; };
 		D4D23E6A2C0E1C310015819C /* MahJong-Scores-2-1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MahJong-Scores-2-1-Info.plist"; sourceTree = SOURCE_ROOT; };
-		D4F4905B2BB5DA5500B6F474 /* CompleteGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteGameView.swift; sourceTree = "<group>"; };
+		D4F4905B2BB5DA5500B6F474 /* CompleteTraditionalGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTraditionalGameView.swift; sourceTree = "<group>"; };
 		D4F490E12BBB2CFE00B6F474 /* DateToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToString.swift; sourceTree = "<group>"; };
 		D4F490E52BBB3FF400B6F474 /* PrintTournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTournament.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,7 +89,7 @@
 		D47C0DEE2BEBF47D004905DA /* Game View */ = {
 			isa = PBXGroup;
 			children = (
-				D4F4905B2BB5DA5500B6F474 /* CompleteGameView.swift */,
+				D4F4905B2BB5DA5500B6F474 /* CompleteTraditionalGameView.swift */,
 				D43E59FB2C07FF9B00F295B4 /* CompleteAmericanGameView.swift */,
 				D47C0DEF2BEBF4B3004905DA /* GameGraphView.swift */,
 				D43E59FD2C0810BC00F295B4 /* LastTilePickerView.swift */,
@@ -276,7 +276,7 @@
 				D43E5A002C0810D800F295B4 /* JokersPresentPickerView.swift in Sources */,
 				D4F490E62BBB3FF400B6F474 /* PrintTournament.swift in Sources */,
 				D4F490E22BBB2CFE00B6F474 /* DateToString.swift in Sources */,
-				D4F4905C2BB5DA5500B6F474 /* CompleteGameView.swift in Sources */,
+				D4F4905C2BB5DA5500B6F474 /* CompleteTraditionalGameView.swift in Sources */,
 				D43E59F02C03C39B00F295B4 /* RuleSetType.swift in Sources */,
 				D43E59F42C03D31D00F295B4 /* RuleSetPickerView.swift in Sources */,
 				D43E59FA2C060DFF00F295B4 /* TournamentTitleView.swift in Sources */,

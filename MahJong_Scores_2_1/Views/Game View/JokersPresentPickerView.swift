@@ -23,11 +23,7 @@ extension JokersPresentPickerView : View {
           }
           .pickerStyle(.segmented)
           .padding()
-          //.onChange(of: jokersPresent) { oldValue, newValue in
-          //  jokersPresent = newValue
-          //}
         }
-        //Text("Selection: \(jokersPresent.description)")
     }
   }
 }
