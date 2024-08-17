@@ -17,7 +17,7 @@ public class Tournament {
   
   var rotateClockwise: Bool?
   var ruleSet: String?
-  let startDate: String?
+  var startDate: String?
   
   // Tournament wide values
   var scheduleItem: Int = 0
@@ -42,20 +42,20 @@ public class Tournament {
   var playersToWindsInGame: [String: String]?
 
   @Relationship(deleteRule: .cascade,
-                inverse: \Score.tournament)
-  var fpScores: [Score]?
+                inverse: \FpScore.tournament)
+  var fpScores: [FpScore]?
   
   @Relationship(deleteRule: .cascade,
-                inverse: \Score.tournament)
-  var spScores: [Score]?
+                inverse: \SpScore.tournament)
+  var spScores: [SpScore]?
   
   @Relationship(deleteRule: .cascade,
-                inverse: \Score.tournament)
-  var tpScores: [Score]?
+                inverse: \TpScore.tournament)
+  var tpScores: [TpScore]?
   
   @Relationship(deleteRule: .cascade,
-                inverse: \Score.tournament)
-  var lpScores: [Score]?
+                inverse: \LpScore.tournament)
+  var lpScores: [LpScore]?
   
   init(_ fpName: String,
        _ spName: String,
@@ -95,7 +95,7 @@ extension Tournament {
 }
 
 extension Tournament {
-  var sortedFpScores: [Score] {
+  var sortedFpScores: [FpScore] {
     let scores = self.fpScores!.filter { $0.tournament! == self }
     let sortedScores = scores.sorted {$0.game! < $1.game!}
     return sortedScores
@@ -103,7 +103,7 @@ extension Tournament {
 }
 
 extension Tournament {
-  var sortedSpScores: [Score] {
+  var sortedSpScores: [SpScore] {
     let scores = self.spScores!.filter { $0.tournament! == self }
     let sortedScores = scores.sorted {$0.game! < $1.game!}
     return sortedScores
@@ -111,7 +111,7 @@ extension Tournament {
 }
 
 extension Tournament {
-  var sortedTpScores: [Score] {
+  var sortedTpScores: [TpScore] {
     let scores = self.tpScores!.filter { $0.tournament! == self }
     let sortedScores = scores.sorted {$0.game! < $1.game!}
     return sortedScores
@@ -119,7 +119,7 @@ extension Tournament {
 }
 
 extension Tournament {
-  var sortedLpScores: [Score] {
+  var sortedLpScores: [LpScore] {
     let scores = self.lpScores!.filter { $0.tournament! == self }
     let sortedScores = scores.sorted {$0.game! < $1.game!}
     return sortedScores
@@ -193,9 +193,9 @@ extension Tournament {
 
 extension Tournament {
   func updateGameScores() {
-    self.fpScores!.append(Score(self.fpName!, self.lastGame!, self.ptScore![self.fpName!]!))
-    self.spScores!.append(Score(self.spName!, self.lastGame!, self.ptScore![self.spName!]!))
-    self.tpScores!.append(Score(self.tpName!, self.lastGame!, self.ptScore![self.tpName!]!))
-    self.lpScores!.append(Score(self.lpName!, self.lastGame!, self.ptScore![self.lpName!]!))
+    self.fpScores!.append(FpScore(self.fpName!, self.lastGame!, self.ptScore![self.fpName!]!))
+    self.spScores!.append(SpScore(self.spName!, self.lastGame!, self.ptScore![self.spName!]!))
+    self.tpScores!.append(TpScore(self.tpName!, self.lastGame!, self.ptScore![self.tpName!]!))
+    self.lpScores!.append(LpScore(self.lpName!, self.lastGame!, self.ptScore![self.lpName!]!))
   }
 }

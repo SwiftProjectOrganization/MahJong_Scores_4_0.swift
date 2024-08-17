@@ -9,10 +9,10 @@ import Foundation
 import SwiftData
 
 fileprivate var tournaments: [Tournament] = []
-fileprivate var fpScores: [Score] = []
-fileprivate var spScores: [Score] = []
-fileprivate var tpScores: [Score] = []
-fileprivate var lpScores: [Score] = []
+fileprivate var fpScores: [FpScore] = []
+fileprivate var spScores: [SpScore] = []
+fileprivate var tpScores: [TpScore] = []
+fileprivate var lpScores: [LpScore] = []
 
 let previewContainer: ModelContainer = {
   let schema = Schema([Tournament.self])
@@ -66,10 +66,10 @@ fileprivate func tournamentsSetup(_ fp: String, _ sp: String, _ tp: String, _ lp
   tournament.lastGame! += 1
   tournament.ruleSet = RuleSetType.traditional.description
   tournament.rotateClockwise = false
-  tournament.fpScores!.append(Score(fp, tournament.lastGame!, 2000))
-  tournament.spScores!.append(Score(sp, tournament.lastGame!, 2000))
-  tournament.tpScores!.append(Score(tp, tournament.lastGame!, 2000))
-  tournament.lpScores!.append(Score(lp, tournament.lastGame!, 2000))
+  tournament.fpScores!.append(FpScore(fp, tournament.lastGame!, 2000))
+  tournament.spScores!.append(SpScore(sp, tournament.lastGame!, 2000))
+  tournament.tpScores!.append(TpScore(tp, tournament.lastGame!, 2000))
+  tournament.lpScores!.append(LpScore(lp, tournament.lastGame!, 2000))
   tournaments.append(tournament)
   //print(tournaments.count)
   //print(tournament.fpName!)

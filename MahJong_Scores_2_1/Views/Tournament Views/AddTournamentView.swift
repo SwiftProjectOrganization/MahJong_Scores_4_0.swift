@@ -98,10 +98,10 @@ extension AddTournamentView {
     tournament.lastGame! += 1
     tournament.ruleSet = selectedRuleSet.description
     tournament.rotateClockwise = (selectedRotation == RotateClockwiseType.clockwise ? true : false)
-    tournament.fpScores!.append(Score(fp, tournament.lastGame!, scores[0]))
-    tournament.spScores!.append(Score(sp, tournament.lastGame!, scores[1]))
-    tournament.tpScores!.append(Score(tp, tournament.lastGame!, scores[2]))
-    tournament.lpScores!.append(Score(lp, tournament.lastGame!, scores[3]))
+    tournament.fpScores!.append(FpScore(fp, tournament.lastGame!, scores[0]))
+    tournament.spScores!.append(SpScore(sp, tournament.lastGame!, scores[1]))
+    tournament.tpScores!.append(TpScore(tp, tournament.lastGame!, scores[2]))
+    tournament.lpScores!.append(LpScore(lp, tournament.lastGame!, scores[3]))
     context.insert(tournament)
     dismiss()
   }

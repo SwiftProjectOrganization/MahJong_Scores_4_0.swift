@@ -10,7 +10,58 @@ import SwiftData
 import Charts
 
 @Model
-public class Score {
+public class FpScore {
+  public var id = UUID()
+  var name: String?
+  var game: Int?
+  var score: Int?
+  var tournament: Tournament?
+  
+  init(_ name: String,
+       _ game: Int,
+       _ score: Int) {
+    self.name = name
+    self.game = game
+    self.score = score
+  }
+}
+
+@Model
+public class SpScore {
+  public var id = UUID()
+  var name: String?
+  var game: Int?
+  var score: Int?
+  var tournament: Tournament?
+  
+  init(_ name: String,
+       _ game: Int,
+       _ score: Int) {
+    self.name = name
+    self.game = game
+    self.score = score
+  }
+}
+
+@Model
+public class TpScore {
+  public var id = UUID()
+  var name: String?
+  var game: Int?
+  var score: Int?
+  var tournament: Tournament?
+  
+  init(_ name: String,
+       _ game: Int,
+       _ score: Int) {
+    self.name = name
+    self.game = game
+    self.score = score
+  }
+}
+
+@Model
+public class LpScore {
   public var id = UUID()
   var name: String?
   var game: Int?

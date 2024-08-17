@@ -12,7 +12,7 @@ import SwiftData
 struct MahJong_Scores_2_0App: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-          Tournament.self, Score.self
+          Tournament.self, FpScore.self, SpScore.self, TpScore.self, LpScore.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
