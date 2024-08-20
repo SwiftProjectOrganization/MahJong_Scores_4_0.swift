@@ -41,10 +41,6 @@ public class FpScore {
   }
 }
 
-public func copyFpScoreToScore(_ fpScore: FpScore) -> Score {
-  Score(fpScore.name!, fpScore.game!, fpScore.score!)
-}
-
 @Model
 public class SpScore {
   public var id = UUID()
@@ -60,10 +56,6 @@ public class SpScore {
     self.game = game
     self.score = score
   }
-}
-
-public func copySpScoreToScore(_ spScore: SpScore) -> Score {
-  Score(spScore.name!, spScore.game!, spScore.score!)
 }
 
 @Model
@@ -83,10 +75,6 @@ public class TpScore {
   }
 }
 
-public func copyTpScoreToScore(_ tpScore: TpScore) -> Score {
-  Score(tpScore.name!, tpScore.game!, tpScore.score!)
-}
-
 @Model
 public class LpScore {
   public var id = UUID()
@@ -102,8 +90,4 @@ public class LpScore {
     self.game = game
     self.score = score
   }
-}
-
-public func copyLpScoreToScore(_ lpScore: LpScore) -> Score {
-  Score(lpScore.name!, lpScore.game!, lpScore.score!)
 }

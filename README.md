@@ -5,7 +5,7 @@
 MahJong_Scores_2_1.swift is an IOS application to keep scores of one or more MahJong tournaments.
 This project uses CloudKit to sync owner's devices. Version 2.1 includes support for American rule sets.
 
-A MahJong tournament consists of all four players being the wind players for all 4 winds. Thus in total at least 26 games, but usually more. 
+A MahJong tournament consists of all four players being the wind players for all 4 winds. Thus in total at least 16 games, but usually more. 
 
 Completion of a tournament can take days, weeks or even much longer. That's why I developed this little app.
 
@@ -20,3 +20,7 @@ The "computed scores" are the game results for each player.
 ## To do
 
 1. Is it useful to keep an overall average player score across tournaments?
+2. Develop an easy way to enter the stones for all 4 players at the end of the game and compute the score?
+3. Strategy tutorial?
+4. Both for traditional and American tournaments?
+5. Enter American scoring cards?
