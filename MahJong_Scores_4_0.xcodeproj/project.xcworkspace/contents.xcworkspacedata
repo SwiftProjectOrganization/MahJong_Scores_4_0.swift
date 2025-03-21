@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/rob/Projects/Swift/ MahJongg/MahJong_Scores_2_1/MahJong_Scores_2_1.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

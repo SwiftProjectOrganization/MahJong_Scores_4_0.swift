@@ -15,7 +15,7 @@ func printTournament(_ tournament: Tournament) {
   print("Fourth player:             \(tournament.lpName!)\n")
   print("Players:                   \(tournament.players!)")
   print("Winds:                     \(tournament.winds!)\n")
-  print("Wind player:               \(tournament.windPlayer!)")
+  print("Wind players:              \(tournament.windPlayer!)")
   print("Current wind:              \(tournament.currentWind!)")
   print("Schedule item:             \(tournament.scheduleItem)")
   print("Winds to players:          \(tournament.windsToPlayersInGame!)")

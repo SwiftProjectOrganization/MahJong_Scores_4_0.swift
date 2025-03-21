@@ -51,25 +51,31 @@ fileprivate func addTournaments(to container: ModelContainer, tournaments: [Tour
 }
 
 fileprivate func tournamentsSetup(_ fp: String, _ sp: String, _ tp: String, _ lp: String) -> Tournament {
-  let tournament = Tournament(fp, sp, tp, lp, fp, "East", fp)
+  let tournament = Tournament(fp, sp, tp, lp, fp, "East")
   tournament.scheduleItem = 0
   tournament.players = [fp, sp, tp, lp]
   tournament.winds = ["East", "South", "West", "North"]
   let scores = [2000, 2000, 2000, 2000]
-  tournament.ptScore = Dictionary(uniqueKeysWithValues: zip(tournament.players!, scores))
-  tournament.pgScore = Dictionary(uniqueKeysWithValues: zip(tournament.players!, [0,0,0,0]))
-  let tmp = tournament.windsAndPlayers(tournament.winds!, tournament.players!, 0)
+  
+  tournament.ptScore = Dictionary(uniqueKeysWithValues: zip([fp, sp, tp, lp], scores))
+  tournament.pgScore = Dictionary(uniqueKeysWithValues: zip([fp, sp, tp, lp], [0,0,0,0]))
+  
+  let tmp = tournament.windsAndPlayers(["East", "South", "West", "North"], [fp, sp, tp, lp], 0)
   tournament.windsToPlayersInGame = Dictionary(uniqueKeysWithValues: zip(tmp.0, tmp.1))
   tournament.playersToWindsInGame = Dictionary(uniqueKeysWithValues: zip(tmp.1, tmp.0))
   tournament.currentWind = tmp.0[0]
-  tournament.windPlayer = tmp.1[0]
-  tournament.lastGame! += 1
+  tournament.windPlayer = [tmp.1[0]]
+  
   tournament.ruleSet = RuleSetType.traditional.description
   tournament.rotateClockwise = false
-  tournament.fpScores!.append(FpScore(fp, tournament.lastGame!, 2000))
-  tournament.spScores!.append(SpScore(sp, tournament.lastGame!, 2000))
-  tournament.tpScores!.append(TpScore(tp, tournament.lastGame!, 2000))
-  tournament.lpScores!.append(LpScore(lp, tournament.lastGame!, 2000))
+  
+  let tmp2 = tournament.lastGame! + 1
+  tournament.fpScores!.append(FpScore(fp, tmp2, 2000))
+  tournament.spScores!.append(SpScore(sp, tmp2, 2000))
+  tournament.tpScores!.append(TpScore(tp, tmp2, 2000))
+  tournament.lpScores!.append(LpScore(lp, tmp2, 2000))
+  tournament.lastGame = tmp2
+  
   tournaments.append(tournament)
   //print(tournaments.count)
   //print(tournament.fpName!)

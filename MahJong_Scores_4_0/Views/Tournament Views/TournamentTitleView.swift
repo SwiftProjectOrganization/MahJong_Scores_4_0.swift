@@ -26,7 +26,7 @@ extension TournamentTitleView: View {
       }
       Spacer()
       HStack {
-        if tournament.fpName == tournament.windPlayer {
+        if tournament.fpName == tournament.windPlayer!.last {
           Text(tournament.fpName!)
             .font(.headline)
             .foregroundColor(.blue)
@@ -35,7 +35,7 @@ extension TournamentTitleView: View {
             .font(.headline)
         }
         Spacer()
-        if tournament.spName == tournament.windPlayer {
+        if tournament.spName == tournament.windPlayer!.last {
           Text(tournament.spName!)
             .font(.headline)
             .foregroundColor(.blue)
@@ -44,7 +44,7 @@ extension TournamentTitleView: View {
             .font(.headline)
         }
         Spacer()
-        if tournament.tpName == tournament.windPlayer {
+        if tournament.tpName == tournament.windPlayer!.last {
           Text(tournament.tpName!)
             .font(.headline)
             .foregroundColor(.blue)
@@ -53,7 +53,7 @@ extension TournamentTitleView: View {
             .font(.headline)
         }
         Spacer()
-        if tournament.lpName == tournament.windPlayer {
+        if tournament.lpName == tournament.windPlayer!.last {
           Text(tournament.lpName!)
             .font(.headline)
             .foregroundColor(.blue)

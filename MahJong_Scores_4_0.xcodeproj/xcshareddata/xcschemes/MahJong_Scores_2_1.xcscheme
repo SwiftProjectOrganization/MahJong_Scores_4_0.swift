@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1540"
+   LastUpgradeVersion = "1630"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D48C3FB12BB07DC900EE3ABE"
-               BuildableName = "MahJong_Scores_2_1.app"
-               BlueprintName = "MahJong_Scores_2_1"
-               ReferencedContainer = "container:MahJong_Scores_2_1.xcodeproj">
+               BuildableName = "MahJong_Scores_4_0.app"
+               BlueprintName = "MahJong_Scores_4_0"
+               ReferencedContainer = "container:MahJong_Scores_4_0.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D48C3FB12BB07DC900EE3ABE"
-            BuildableName = "MahJong_Scores_2_1.app"
-            BlueprintName = "MahJong_Scores_2_1"
-            ReferencedContainer = "container:MahJong_Scores_2_1.xcodeproj">
+            BuildableName = "MahJong_Scores_4_0.app"
+            BlueprintName = "MahJong_Scores_4_0"
+            ReferencedContainer = "container:MahJong_Scores_4_0.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D48C3FB12BB07DC900EE3ABE"
-            BuildableName = "MahJong_Scores_2_1.app"
-            BlueprintName = "MahJong_Scores_2_1"
-            ReferencedContainer = "container:MahJong_Scores_2_1.xcodeproj">
+            BuildableName = "MahJong_Scores_4_0.app"
+            BlueprintName = "MahJong_Scores_4_0"
+            ReferencedContainer = "container:MahJong_Scores_4_0.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

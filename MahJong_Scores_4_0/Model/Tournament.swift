@@ -30,7 +30,7 @@ public class Tournament {
   var lpName: String?
   
   // Game values
-  var windPlayer: String?
+  var windPlayer: [String]?
   var currentWind: String?
   var players: [String]?
   var winds: [String]?
@@ -61,9 +61,10 @@ public class Tournament {
        _ spName: String,
        _ tpName: String,
        _ lpName: String,
-       _ windPlayer: String,
        _ currentWind: String,
-       _ gameWinnerName: String) {
+       _ gameWinnerName: String = "",
+       _ windPlayer: [String]? = ["Liesbeth", "Rob", "Nancy", "Carel"],
+       _ winds: [String]? = ["East", "South", "West", "North"]) {
     self.rotateClockwise = true
     self.ruleSet = "INTERNATIONAL"
     self.startDate = dateToString()
@@ -72,13 +73,15 @@ public class Tournament {
     self.spName = spName
     self.tpName = tpName
     self.lpName = lpName
-    self.windPlayer = windPlayer
+    self.windPlayer = [fpName]
     self.currentWind = currentWind
     self.gameWinnerName = gameWinnerName
     self.fpScores = []
     self.spScores = []
     self.tpScores = []
     self.lpScores = []
+    self.windPlayer = windPlayer
+    self.winds = winds
   }
 }
 
@@ -182,7 +185,7 @@ extension Tournament {
       self.windsToPlayersInGame = Dictionary(uniqueKeysWithValues: zip(tmp.0, tmp.1))
       self.playersToWindsInGame = Dictionary(uniqueKeysWithValues: zip(tmp.1, tmp.0))
       self.currentWind = tmp.0[0]
-      self.windPlayer = tmp.1[0]
+      self.windPlayer = self.windPlayer! + [tmp.1[0]]
       self.winds = tmp.0
       self.players = tmp.1
     } else {

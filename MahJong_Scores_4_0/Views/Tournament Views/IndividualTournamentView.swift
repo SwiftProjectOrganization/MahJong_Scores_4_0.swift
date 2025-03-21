@@ -9,12 +9,13 @@ import SwiftUI
 import SwiftData
 
 struct IndividualTournamentView {
-  @State var tournament: Tournament
+  //@Binding var tournament: Tournament
   
   @State private var title = ""
   @State private var isAddingGame = false
   @State private var isCompleteGameViewDisplayed = false
   @Environment(\.dismiss) private var dismiss
+  var tournament: Tournament
 }
 
 extension IndividualTournamentView: View {
@@ -35,7 +36,7 @@ extension IndividualTournamentView: View {
         Section("Player positions") {
           HStack {
             Spacer()
-            if tournament.fpName == tournament.windPlayer {
+            if tournament.fpName == tournament.windPlayer!.last {
               Text(createPlayerLabel(tournament, 0))
                 .font(.headline)
                 .foregroundColor(.blue)
@@ -46,7 +47,7 @@ extension IndividualTournamentView: View {
            Spacer()
           }
           HStack {
-            if tournament.spName == tournament.windPlayer {
+            if tournament.spName == tournament.windPlayer!.last {
               Text(createPlayerLabel(tournament, 1))
                 .font(.headline)
                 .foregroundColor(.blue)
@@ -55,7 +56,7 @@ extension IndividualTournamentView: View {
                 .font(.headline)
             }
             Spacer()
-            if tournament.lpName == tournament.windPlayer {
+            if tournament.lpName == tournament.windPlayer!.last {
               Text(createPlayerLabel(tournament, 3))
                 .font(.headline)
                 .foregroundColor(.blue)
@@ -68,7 +69,7 @@ extension IndividualTournamentView: View {
 
           HStack {
             Spacer()
-            if tournament.tpName == tournament.windPlayer {
+            if tournament.tpName == tournament.windPlayer!.last {
               Text(createPlayerLabel(tournament, 2))
                 .font(.headline)
                 .foregroundColor(.blue)
@@ -93,15 +94,17 @@ extension IndividualTournamentView: View {
       }
       .sheet(isPresented: $isCompleteGameViewDisplayed) {
         if tournament.ruleSet == "Traditional" {
-          CompleteTraditionalGameView(tournament: $tournament,
-                           isCompleteGameViewDisplayed: .constant(true))
+          CompleteTraditionalGameView(isCompleteGameViewDisplayed: .constant(true),
+                                      tournament: tournament)
         } else {
-          CompleteAmericanGameView(tournament: $tournament,
-                           isCompleteGameViewDisplayed: .constant(true))
+          CompleteAmericanGameView(isCompleteGameViewDisplayed: .constant(true),
+                                   tournament: tournament,
+                           )
         }
       }
     }
     .onAppear {
+      printTournament(tournament)
       title = tournament.title
     }
     .onDisappear {

@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+@MainActor
 struct AddTournamentView {
   @State private var fp: String = ""
   @State private var sp: String = ""
@@ -82,7 +83,7 @@ extension AddTournamentView: View {
 extension AddTournamentView {
   private func save() {
     focusedField = false
-    let tournament = Tournament(fp, sp, tp, lp, fp, "East", fp)
+    let tournament = Tournament(fp, sp, tp, lp, fp, "East")
     
     tournament.scheduleItem = 0
     tournament.players = [fp, sp, tp, lp]
@@ -90,18 +91,23 @@ extension AddTournamentView {
     let scores = selectedRuleSet == RuleSetType.traditional ? [2000, 2000, 2000, 2000] : [0, 0, 0, 0]
     tournament.ptScore = Dictionary(uniqueKeysWithValues: zip(tournament.players!, scores))
     tournament.pgScore = Dictionary(uniqueKeysWithValues: zip(tournament.players!, [0,0,0,0]))
-    let tmp = tournament.windsAndPlayers(tournament.winds!, tournament.players!, 0)
+    
+    let tmp = tournament.windsAndPlayers(["East", "South", "West", "North"], [fp, sp, tp, lp], 0)
     tournament.windsToPlayersInGame = Dictionary(uniqueKeysWithValues: zip(tmp.0, tmp.1))
     tournament.playersToWindsInGame = Dictionary(uniqueKeysWithValues: zip(tmp.1, tmp.0))
     tournament.currentWind = tmp.0[0]
-    tournament.windPlayer = tmp.1[0]
-    tournament.lastGame! += 1
+    tournament.windPlayer = [tmp.1[0]]
+    
     tournament.ruleSet = selectedRuleSet.description
     tournament.rotateClockwise = (selectedRotation == RotateClockwiseType.clockwise ? true : false)
-    tournament.fpScores!.append(FpScore(fp, tournament.lastGame!, scores[0]))
-    tournament.spScores!.append(SpScore(sp, tournament.lastGame!, scores[1]))
-    tournament.tpScores!.append(TpScore(tp, tournament.lastGame!, scores[2]))
-    tournament.lpScores!.append(LpScore(lp, tournament.lastGame!, scores[3]))
+    
+    let tmp2 = tournament.lastGame! + 1
+    tournament.lastGame! = tmp2
+    tournament.fpScores!.append(FpScore(fp, tmp2, scores[0]))
+    tournament.spScores!.append(SpScore(sp, tmp2, scores[1]))
+    tournament.tpScores!.append(TpScore(tp, tmp2, scores[2]))
+    tournament.lpScores!.append(LpScore(lp, tmp2, scores[3]))
+    
     context.insert(tournament)
     dismiss()
   }

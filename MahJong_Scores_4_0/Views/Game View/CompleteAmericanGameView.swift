@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct CompleteAmericanGameView {
-  @Binding var tournament: Tournament
   @Binding var isCompleteGameViewDisplayed: Bool
   
   @State private var gameWinnerName: String = ""
@@ -26,6 +25,7 @@ struct CompleteAmericanGameView {
   @FocusState private var focusedField
   @Environment(\.dismiss) private var dismiss
   @Environment(\.modelContext) private var context
+  var tournament: Tournament
 }
 
 

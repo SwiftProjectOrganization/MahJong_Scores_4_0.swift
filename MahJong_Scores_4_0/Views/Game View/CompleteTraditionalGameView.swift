@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct CompleteTraditionalGameView {
-  @Binding var tournament: Tournament
+  //@Binding var tournament: Tournament
   @Binding var isCompleteGameViewDisplayed: Bool
   
   @State private var gameWinnerName: String = ""
@@ -24,13 +24,14 @@ struct CompleteTraditionalGameView {
   @FocusState private var focusedField
   @Environment(\.dismiss) private var dismiss
   @Environment(\.modelContext) private var context
+  var tournament: Tournament
 }
 
 
 extension CompleteTraditionalGameView: View {
     var body: some View {
       VStack(spacing: 50) {
-        Text("Enter game scores and press `save`.")
+        Text("Press `Rotate` until the game winner is on the top line. Then enter game scores and press `Save`.")
           .font(.largeTitle)
         VStack {
           List {
@@ -146,7 +147,7 @@ extension CompleteTraditionalGameView {
 }
 
 func updateTraditionalTournamentScore(_ tournament: Tournament) {
-  if tournament.gameWinnerName == tournament.windPlayer {
+  if tournament.gameWinnerName == tournament.windPlayer!.last {
     for i in 0...3 {
       // Settle between winner and other players if game winner is wind player
       let pi = tournament.players![i]
@@ -163,6 +164,7 @@ func updateTraditionalTournamentScore(_ tournament: Tournament) {
         }
       }
     }
+    tournament.windPlayer = tournament.windPlayer! + [tournament.windPlayer!.last!]
   } else {
     // Game winner is not the wind player
     for i in 0...3 {
@@ -170,7 +172,7 @@ func updateTraditionalTournamentScore(_ tournament: Tournament) {
       if pi == tournament.gameWinnerName {
         tournament.ptScore![pi]! += 4 * tournament.pgScore![tournament.gameWinnerName!]!
       } else {
-        if pi == tournament.windPlayer {
+        if pi == tournament.windPlayer!.last {
           tournament.ptScore![pi]! -= 2 * tournament.pgScore![tournament.gameWinnerName!]!
         } else {
           tournament.ptScore![pi]! -= 1 * tournament.pgScore![tournament.gameWinnerName!]!
@@ -181,7 +183,7 @@ func updateTraditionalTournamentScore(_ tournament: Tournament) {
             if pi != tournament.gameWinnerName && pj != tournament.gameWinnerName {
               // Settle between non-winners
               let dif = tournament.pgScore![pi]! - tournament.pgScore![pj]!
-              if pi == tournament.windPlayer || pj == tournament.windPlayer {
+              if pi == tournament.windPlayer!.last || pj == tournament.windPlayer!.last {
                 tournament.ptScore![pi]! += 2 * dif
               } else {
                 tournament.ptScore![pi]! += 1 * dif

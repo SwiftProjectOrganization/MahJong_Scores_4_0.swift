@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct MahJong_Scores_2_0App: App {
+struct MahJong_Scores_4_0App: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
           Tournament.self, FpScore.self, SpScore.self, TpScore.self, LpScore.self

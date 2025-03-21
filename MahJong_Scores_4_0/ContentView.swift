@@ -9,6 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+}
+
+extension ContentView {
   var body: some View {
     TournamentView()
   }

@@ -8,10 +8,11 @@
 import SwiftUI
 import SwiftData
 
+@MainActor
 struct TournamentView {
   @State private var isAddingTournament = false
   @Environment(\.modelContext) private var context
-  @Query private var tournaments: [Tournament]
+  @Query var tournaments: [Tournament]
 }
 
 extension TournamentView: View {
@@ -54,6 +55,6 @@ extension TournamentView: View {
 }
 
 #Preview {
-    TournamentView()
+  TournamentView()
     .modelContainer(previewContainer)
 }
